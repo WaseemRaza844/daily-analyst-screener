@@ -89,6 +89,7 @@ small{{color:#52677c}}</style></head><body>
 <p><small>For personal research only. Analysts and free market-data feeds may be incomplete or delayed. This dashboard is publicly reachable even if the source repository is private. No credentials or family information are published.</small></p></main>
 <script>const select=document.getElementById('day');function show(){{document.querySelectorAll('.report').forEach(x=>x.classList.toggle('active',x.dataset.day===select.value));}}select.addEventListener('change',show);show();</script></body></html>"""
     (OUT / "index.html").write_text(page, encoding="utf-8")
+    Path("index.html").write_text(page, encoding="utf-8")
     (OUT / ".nojekyll").touch()
     print(f"Dashboard contains {len(history)} days, most recent {day}")
 
