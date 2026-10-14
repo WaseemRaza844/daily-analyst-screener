@@ -5,12 +5,12 @@ on:
       timezone: 'America/New_York'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: analyst-screen
   cancel-in-progress: false
 jobs:
-  screen-and-email:
+  screen-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -32,7 +32,7 @@ jobs:
             market-cache-
       - name: Unit tests
         run: python -m unittest discover -s tests -v
-      - name: Run screener and send email
+      - name: Run screener
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -40,7 +40,18 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-        run: python -m src.main --send
+        run: python -m src.main
+      - name: Build historical dashboard
+        run: python -m src.report.dashboard
+      - name: Persist last seven days in repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html docs/history docs/.nojekyll
+          if ! git diff --cached --quiet; then
+            git commit -m "Update daily research dashboard [skip ci]"
+            git push origin HEAD:main
+          fi
       - name: Upload report for inspection
         if: always()
         uses: actions/upload-artifact@v4
@@ -49,3 +60,21 @@ jobs:
           path: output/
           if-no-files-found: ignore
           retention-days: 14
+
+      - name: Upload Pages site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+  deploy-pages:
+    needs: screen-and-publish
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
