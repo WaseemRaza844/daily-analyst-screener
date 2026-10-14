@@ -1,7 +1,8 @@
 name: Daily Analyst Screen
 on:
   schedule:
-    - cron: '0 7 * * *' # UTC: 7 AM UTC (not local New York time)
+    - cron: '0 7 * * *' # 7:00 AM Eastern every day
+      timezone: 'America/New_York'
   workflow_dispatch:
 permissions:
   contents: read
