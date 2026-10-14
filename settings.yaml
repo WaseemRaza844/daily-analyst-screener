@@ -1,0 +1,70 @@
+max_price: 20
+max_results: 10
+min_analyst_count: 3
+allowed_ratings: [buy, strong_buy]
+min_target_upside_pct: 10
+min_revenue_growth: 0.08
+min_relative_strength_3m_pct: 0
+require_positive_fcf_trend: true
+require_institutional_or_insider_buying: false
+min_institutional_ownership: 0.20
+cache_hours: 18
+max_tickers_per_run: 65
+request_delay_seconds: 1.5
+lookback_period: 1y
+# Coverage is explicitly limited to this universe, not the whole market.
+# Tickers here are INPUTS for screening, not recommendations.
+universe:
+  - SOFI
+  - PLTR
+  - F
+  - PFE
+  - SNAP
+  - RIVN
+  - LCID
+  - NIO
+  - HIMS
+  - NU
+  - HOOD
+  - OPEN
+  - DNA
+  - CHPT
+  - QS
+  - RUN
+  - PLUG
+  - ACHR
+  - JOBY
+  - RKLB
+  - ASTS
+  - IONQ
+  - RGTI
+  - QBTS
+  - BBAI
+  - LUNR
+  - INTC
+  - VALE
+  - NOK
+  - ERIC
+  - TEF
+  - ABEV
+  - KGC
+  - BTG
+  - GOLD
+  - HL
+  - CDE
+  - AG
+  - UUUU
+  - DNN
+sector_benchmarks:
+  Technology: XLK
+  Healthcare: XLV
+  Financial Services: XLF
+  Consumer Cyclical: XLY
+  Consumer Defensive: XLP
+  Energy: XLE
+  Industrials: XLI
+  Basic Materials: XLB
+  Utilities: XLU
+  Real Estate: XLRE
+  Communication Services: XLC
+fallback_benchmark: SPY
