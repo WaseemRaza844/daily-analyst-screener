@@ -123,6 +123,16 @@ class YahooProvider:
                 'fcf': cash[:3],
                 'institutional_percent': numeric(info.get('heldPercentInstitutions')),
                 'insider_percent': numeric(info.get('heldPercentInsiders')),
+                'valuation': {key: numeric(info.get(field)) for key, field in {
+                    'pe': 'trailingPE', 'forward_pe': 'forwardPE',
+                    'peg': 'trailingPegRatio', 'eps': 'trailingEps',
+                    'forward_eps': 'forwardEps', 'price_to_book': 'priceToBook',
+                    'market_cap': 'marketCap', 'profit_margin': 'profitMargins',
+                    'operating_margin': 'operatingMargins', 'roe': 'returnOnEquity',
+                    'debt_to_equity': 'debtToEquity', 'current_ratio': 'currentRatio',
+                    'earnings_growth': 'earningsGrowth', 'dividend_yield': 'dividendYield',
+                    'beta': 'beta', 'price_to_sales': 'priceToSalesTrailing12Months'
+                }.items()},
                 'source': f'https://finance.yahoo.com/quote/{ticker}/',
                 'financials_source': f'https://finance.yahoo.com/quote/{ticker}/financials/',
                 'cash_source': f'https://finance.yahoo.com/quote/{ticker}/cash-flow/',
