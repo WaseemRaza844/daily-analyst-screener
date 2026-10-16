@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-10-16T14:55:12+00:00",
+  "generated_utc": "2026-10-16T15:08:23+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "CDE",
       "name": "Coeur Mining, Inc.",
-      "price": 16.024999618530273,
+      "price": 15.96500015258789,
       "rating": "Buy",
       "target": 23.95455,
       "support": 14.680000305175781,
       "resistance": 22.450000762939453,
       "growth": 1.259,
-      "relative_strength": 10.140458554125464,
+      "relative_strength": 9.606292936424655,
       "fcf": [
         665717000.0,
         -8954000.0,
         -297329000.0
       ],
       "institutional_percent": 0.82561,
-      "reason": "Public analyst consensus: buy, 11 analysts; revenue growth 125.9% and 3-month benchmark-relative strength +10.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 53.39387294991272,
+      "reason": "Public analyst consensus: buy, 11 analysts; revenue growth 125.9% and 3-month benchmark-relative strength +9.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 53.37544982693582,
       "links": {
         "source": "https://finance.yahoo.com/quote/CDE/",
         "analysis_source": "https://finance.yahoo.com/quote/CDE/analysis/",
@@ -30,21 +30,21 @@
     {
       "ticker": "SBSW",
       "name": "D/B/A Sibanye-Stillwater Limite",
-      "price": 10.3100004196167,
+      "price": 10.250200271606445,
       "rating": "Buy",
-      "target": 13.5101,
+      "target": 13.508539,
       "support": 9.3100004196167,
       "resistance": 12.883437960051115,
       "growth": 0.643,
-      "relative_strength": 31.411928004748276,
+      "relative_strength": 30.521693698069672,
       "fcf": [
         1100000000.0,
         -11456000000.0,
         -15316000000.0
       ],
       "institutional_percent": 0.20954001,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +31.4 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 42.81081238693642,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +30.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 42.72400762151361,
       "links": {
         "source": "https://finance.yahoo.com/quote/SBSW/",
         "analysis_source": "https://finance.yahoo.com/quote/SBSW/analysis/",
@@ -55,21 +55,21 @@
     {
       "ticker": "IAG",
       "name": "Iamgold Corporation",
-      "price": 18.375,
+      "price": 18.290000915527344,
       "rating": "Buy",
       "target": 24.5,
       "support": 16.81999969482422,
       "resistance": 22.31999969482422,
       "growth": 0.475,
-      "relative_strength": 28.59563021267806,
+      "relative_strength": 27.87631367990191,
       "fcf": [
         841000000.0,
         -73100000.0,
         -749000000.0
       ],
       "institutional_percent": 0.75601995,
-      "reason": "Public analyst consensus: buy, 6 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +28.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 36.63347057443732,
+      "reason": "Public analyst consensus: buy, 6 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +27.9 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 36.567601707523735,
       "links": {
         "source": "https://finance.yahoo.com/quote/IAG/",
         "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
@@ -80,21 +80,21 @@
     {
       "ticker": "HL",
       "name": "Hecla Mining Company",
-      "price": 15.835000038146973,
+      "price": 15.805000305175781,
       "rating": "Buy",
       "target": 22.775,
       "support": 14.640000343322754,
       "resistance": 21.690000534057617,
       "growth": 0.524,
-      "relative_strength": 7.802504593697735,
+      "relative_strength": 7.482088724013191,
       "fcf": [
         310249000.0,
         3785000.0,
         -148388000.0
       ],
       "institutional_percent": 0.76755,
-      "reason": "Public analyst consensus: buy, 10 analysts; revenue growth 52.4% and 3-month benchmark-relative strength +7.8 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 34.218966178620285,
+      "reason": "Public analyst consensus: buy, 10 analysts; revenue growth 52.4% and 3-month benchmark-relative strength +7.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 34.18872072801734,
       "links": {
         "source": "https://finance.yahoo.com/quote/HL/",
         "analysis_source": "https://finance.yahoo.com/quote/HL/analysis/",
@@ -111,15 +111,15 @@
       "support": 12.130999565124512,
       "resistance": 16.219999313354492,
       "growth": 0.521,
-      "relative_strength": 5.481460422870765,
+      "relative_strength": 5.302380814863494,
       "fcf": [
         3159695000.0,
         2224054000.0,
         1089186000.0
       ],
       "institutional_percent": 0.8237,
-      "reason": "Public analyst consensus: buy, 22 analysts; revenue growth 52.1% and 3-month benchmark-relative strength +5.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 28.335334876818322,
+      "reason": "Public analyst consensus: buy, 22 analysts; revenue growth 52.1% and 3-month benchmark-relative strength +5.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 28.272657014015778,
       "links": {
         "source": "https://finance.yahoo.com/quote/NU/",
         "analysis_source": "https://finance.yahoo.com/quote/NU/analysis/",
@@ -130,21 +130,21 @@
     {
       "ticker": "BTG",
       "name": "B2Gold Corp",
-      "price": 5.355000019073486,
+      "price": 5.34499979019165,
       "rating": "Buy",
       "target": 6.4,
       "support": 4.920000076293945,
       "resistance": 5.8787001930387675,
       "growth": 0.14,
-      "relative_strength": 44.21344883279057,
+      "relative_strength": 43.8280367165615,
       "fcf": [
         895836000.0,
         877604000.0,
         638085000.0
       ],
       "institutional_percent": 0.69617,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +44.2 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 26.22904870046507,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +43.8 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 26.16123615044377,
       "links": {
         "source": "https://finance.yahoo.com/quote/BTG/",
         "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
