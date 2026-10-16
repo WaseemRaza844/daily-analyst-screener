@@ -1,6 +1,7 @@
 """Create a daily browsable Pages dashboard and retain seven date-stamped reports."""
 import json
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from html import escape
 from pathlib import Path
 
@@ -26,6 +27,12 @@ def main():
                 history.append((path.stem, json.loads(path.read_text(encoding="utf-8"))))
             except (OSError, ValueError):
                 continue
+    latest = history[0][1] if history else report
+    previous = history[1][1] if len(history) > 1 else None
+    latest_symbols = {x.get('ticker') for x in latest.get('matches', [])}
+    previous_symbols = {x.get('ticker') for x in previous.get('matches', [])} if previous else set()
+    overlap = len(latest_symbols & previous_symbols) if previous else None
+    stamp_et = datetime.fromisoformat(report['generated_utc']).astimezone(ZoneInfo('America/New_York')).strftime('%b %d, %Y at %I:%M %p %Z')
     date_options = "".join('<option value="' + escape(d) + '">' + escape(d) + '</option>' for d, _ in history)
     items = []
     for d, r in history:
@@ -83,7 +90,7 @@ details{{padding:12px;border-bottom:1px solid #e1e7ee}}summary{{cursor:pointer;f
 small{{color:#52677c}}</style></head><body>
 <header><h1>Daily Analyst-Consensus Research Dashboard</h1><p>Daily at 7:00 AM Eastern · Historical results · No trading recommendations</p></header>
 <main><div class="top"><label for="day"><b>View report date:</b></label> <select id="day">{date_options}</select>
-<p><small>Dates are report-generation dates, not necessarily trading days. Data may reflect the previous close. N/A means unavailable, not zero.</small></p></div>
+<p><strong>Latest completed screening:</strong> {escape(stamp_et)} · <strong>Universe checked:</strong> {int(report.get('scanned',0))} · <strong>Qualified:</strong> {len(report.get('matches',[]))} · <strong>Repeated from prior report:</strong> {overlap if overlap is not None else 'N/A'}</p><p><small>Fresh screen conducted for every completed scheduled run. Some stocks may qualify repeatedly; daily screening does not guarantee five or six matches. Dates are report-generation dates, not necessarily trading days; prices may reflect the previous close. N/A means unavailable.</small></p></div>
 {"".join(items)}
 <aside><h2>Understand the indicators</h2>{definitions}</aside>
 <p><small>For personal research only. Analysts and free market-data feeds may be incomplete or delayed. This dashboard is publicly reachable even if the source repository is private. No credentials or family information are published.</small></p></main>
