@@ -37,6 +37,7 @@ def main():
     items = []
     for d, r in history:
         blocks = []
+        table_rows = []
         for x in r.get("matches", []):
             h = lambda k: escape(str(x.get(k, "N/A")))
             v = x.get("indicators") or {}
@@ -50,8 +51,11 @@ def main():
             source = links.get("source", "")
             source_link = ('<a href="' + escape(source, quote=True) + '" rel="noopener noreferrer">Yahoo Finance source</a>') if source.startswith("https://finance.yahoo.com/") else ""
             pct = lambda key: "N/A" if x.get(key) is None else f"{float(x[key])*100:.1f}%"
-            blocks.append(f"""<article class="stock">
-<h3>{h('ticker')} · {h('name')}</h3>
+            ticker_anchor = "stock-" + "".join(c for c in str(x.get("ticker", "")) if c.isalnum() or c == "-")
+            target_upside = ((x["target"] / x["price"] - 1) * 100) if x.get("target") and x.get("price") else None
+            upside_text = f"{target_upside:+.1f}%" if target_upside is not None else "N/A"
+            table_rows.append(f'<tr><td><a href="#{escape(ticker_anchor)}">{h("ticker")}</a></td><td>{h("name")}</td><td>{dollars("price")}</td><td>{h("rating")}</td><td>{dollars("target")}</td><td>{upside_text}</td><td>{pct("growth")}</td><td>{metric("pe")}</td><td>{metric("peg")}</td><td><a href="#{escape(ticker_anchor)}">Details ↓</a></td></tr>')
+            blocks.append(f"""<details class="stock" id="{escape(ticker_anchor)}"><summary>{h('ticker')} · {h('name')} — {dollars('price')} · Analyst: {h('rating')} <span class="more">View analysis</span></summary><div class="stock-body">
 <p><strong>Price:</strong> {dollars('price')} · <strong>Analyst consensus:</strong> {h('rating')} · <strong>Target:</strong> {dollars('target')}</p>
 <p><strong>20-session support:</strong> {dollars('support')} · <strong>60-session resistance:</strong> {dollars('resistance')}</p>
 <p><strong>Revenue growth:</strong> {pct('growth')} · <strong>3-month relative strength:</strong> {h('relative_strength')} percentage points</p>
@@ -59,10 +63,11 @@ def main():
 <span>EPS: <b>{metric('eps')}</b></span><span>Price/book: <b>{metric('price_to_book')}</b></span><span>Profit margin: <b>{metric('profit_margin')}</b></span>
 <span>ROE: <b>{metric('roe')}</b></span><span>Debt/equity: <b>{metric('debt_to_equity')}</b></span><span>Current ratio: <b>{metric('current_ratio')}</b></span>
 <span>Market cap: <b>{metric('market_cap')}</b></span></div>
-<p>{h('reason')}</p><p>{source_link}</p></article>""")
+<p>{h('reason')}</p><p>{source_link}</p></div></details>""")
         if not blocks:
             blocks = ["<p>No stocks met all required screening criteria for this day.</p>"]
-        items.append(f'<section class="report" data-day="{escape(d)}"><p>Generated: {escape(r.get("generated_utc","unknown"))} · Screened: {int(r.get("scanned",0))} · Matched: {len(r.get("matches", []))} · Errors: {len(r.get("errors", []))}</p>{"".join(blocks)}</section>')
+        comparison = ('<div class="table-scroll"><table><thead><tr><th>Ticker</th><th>Company</th><th>Price</th><th>Analyst rating</th><th>Target</th><th>Target upside</th><th>Revenue growth</th><th>P/E</th><th>PEG</th><th>Explore</th></tr></thead><tbody>' + ''.join(table_rows) + '</tbody></table></div>') if table_rows else '<p>No stocks passed the mandatory filters.</p>'
+        items.append(f'<section class="report" data-day="{escape(d)}"><section id="overview"><h2>Stock comparison</h2><p>Generated: {escape(r.get("generated_utc","unknown"))} · Screened: {int(r.get("scanned",0))} · Qualified: {len(r.get("matches", []))} · Errors: {len(r.get("errors", []))}</p><p class="note">The rating column is the source-reported analyst consensus, not a personal instruction to buy or sell. Target upside compares analyst targets with the report price; it is not a forecast guarantee.</p>{comparison}</section><section id="stock-details"><h2>Individual stock analysis</h2><p>All stock panels are collapsed by default. Select one to view valuation, technical levels, and sources.</p>{"".join(blocks)}</section></section>')
     glossary = {
         "P/E": "Current share price divided by earnings per share. Negative earnings make P/E unhelpful.",
         "Forward P/E": "Price relative to forecast earnings; forecasts can change.",
@@ -87,12 +92,21 @@ main{{max-width:1100px;margin:auto;padding:20px}}.stock,aside,.top{{background:w
 .metrics{{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:9px;background:#f2f6fa;padding:12px;border-radius:9px}}
 .metrics span{{padding:5px}}p{{line-height:1.5}}a{{color:#16609f}}select{{padding:10px;border-radius:8px;border:1px solid #a8b9c9;font:inherit}}
 details{{padding:12px;border-bottom:1px solid #e1e7ee}}summary{{cursor:pointer;font-weight:bold}}.report{{display:none}}.report.active{{display:block}}
-small{{color:#52677c}}</style></head><body>
+small{{color:#52677c}}
+.nav{{position:sticky;top:0;background:#fff;z-index:5;padding:13px 5%;display:flex;flex-wrap:wrap;gap:18px;border-bottom:1px solid #dae4ed;box-shadow:0 1px 6px #14253d12}}
+.nav a{{font-weight:600;text-decoration:none}}html{{scroll-behavior:smooth;scroll-padding-top:90px}}
+.table-scroll{{overflow-x:auto;background:white;border-radius:12px;border:1px solid #dce6ef}}
+table{{width:100%;border-collapse:collapse;min-width:850px;font-size:14px}}th,td{{padding:12px;text-align:left;border-bottom:1px solid #e3eaf1;vertical-align:top}}th{{background:#173e62;color:white;white-space:nowrap}}tbody tr:hover{{background:#eff6fc}}
+.note{{font-size:14px;color:#4a6075}}section#overview,section#stock-details{{margin:25px 0}}
+.stock summary{{cursor:pointer;font-size:18px;font-weight:700;list-style-position:inside}}.stock summary::marker{{color:#165a9f}}.stock[open]{{border-color:#7fa7cd}}.stock-body{{padding-top:15px}}.more{{float:right;color:#16609f;font-size:13px;font-weight:500}}
+@media(max-width:600px){{.more{{float:none;display:block}}.nav{{gap:12px;font-size:13px}}}}
+</style></head><body>
 <header><h1>Daily Analyst-Consensus Research Dashboard</h1><p>Daily at 7:00 AM Eastern · Historical results · No trading recommendations</p></header>
-<main><div class="top"><label for="day"><b>View report date:</b></label> <select id="day">{date_options}</select>
+<nav class="nav" aria-label="Dashboard sections"><a href="#overview">Stock comparison</a><a href="#stock-details">Stock details</a><a href="#indicators">Indicator guide</a><a href="#top">Back to top ↑</a></nav>
+<main id="top"><div class="top"><label for="day"><b>View report date:</b></label> <select id="day">{date_options}</select>
 <p><strong>Latest completed screening:</strong> {escape(stamp_et)} · <strong>Universe checked:</strong> {int(report.get('scanned',0))} · <strong>Qualified:</strong> {len(report.get('matches',[]))} · <strong>Repeated from prior report:</strong> {overlap if overlap is not None else 'N/A'}</p><p><small>Fresh screen conducted for every completed scheduled run. Some stocks may qualify repeatedly; daily screening does not guarantee five or six matches. Dates are report-generation dates, not necessarily trading days; prices may reflect the previous close. N/A means unavailable.</small></p></div>
 {"".join(items)}
-<aside><h2>Understand the indicators</h2>{definitions}</aside>
+<aside id="indicators"><h2>Understand the indicators</h2>{definitions}</aside>
 <p><small>For personal research only. Analysts and free market-data feeds may be incomplete or delayed. This dashboard is publicly reachable even if the source repository is private. No credentials or family information are published.</small></p></main>
 <script>const select=document.getElementById('day');function show(){{document.querySelectorAll('.report').forEach(x=>x.classList.toggle('active',x.dataset.day===select.value));}}select.addEventListener('change',show);show();</script></body></html>"""
     (OUT / "index.html").write_text(page, encoding="utf-8")
