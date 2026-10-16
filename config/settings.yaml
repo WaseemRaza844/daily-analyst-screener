@@ -1,5 +1,5 @@
 max_price: 20
-max_results: 10
+max_results: 6
 min_analyst_count: 3
 allowed_ratings: [buy, strong_buy]
 min_target_upside_pct: 10
@@ -8,9 +8,9 @@ min_relative_strength_3m_pct: 0
 require_positive_fcf_trend: true
 require_institutional_or_insider_buying: false
 min_institutional_ownership: 0.20
-cache_hours: 18
-max_tickers_per_run: 65
-request_delay_seconds: 1.5
+cache_hours: 0
+max_tickers_per_run: 110
+request_delay_seconds: 0.6
 lookback_period: 1y
 # Coverage is explicitly limited to this universe, not the whole market.
 # Tickers here are INPUTS for screening, not recommendations.
@@ -45,7 +45,6 @@ universe:
   - VALE
   - NOK
   - ERIC
-  - TEF
   - ABEV
   - KGC
   - BTG
@@ -55,6 +54,79 @@ universe:
   - AG
   - UUUU
   - DNN
+  - AUR
+  - ALAB
+  - SOUN
+  - PATH
+  - AI
+  - WOLF
+  - ON
+  - STM
+  - U
+  - DOCN
+  - CLNE
+  - BE
+  - ENVX
+  - MVST
+  - EVGO
+  - BLDP
+  - FCEL
+  - SEDG
+  - ENPH
+  - MAXN
+  - ARRY
+  - STEM
+  - FSLY
+  - PTON
+  - BROS
+  - CFLT
+  - GTLB
+  - ASAN
+  - XMTR
+  - CRNC
+  - HUT
+  - HIVE
+  - CIFR
+  - IREN
+  - BTDR
+  - S
+  - ZETA
+  - UPST
+  - AFRM
+  - DLO
+  - STNE
+  - PAGP
+  - ET
+  - WBD
+  - PARA
+  - T
+  - VZ
+  - BAC
+  - C
+  - WFC
+  - UBER
+  - LYFT
+  - CHWY
+  - GPS
+  - AAL
+  - JBLU
+  - LUV
+  - HBI
+  - CLF
+  - AA
+  - MP
+  - NG
+  - SVM
+  - PAAS
+  - EXK
+  - FSM
+  - EQX
+  - GFI
+  - AU
+  - SBSW
+  - IAG
+  - EGO
+  - NEM
 sector_benchmarks:
   Technology: XLK
   Healthcare: XLV
