@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-18T14:04:59+00:00",
+  "generated_utc": "2026-10-18T14:15:51+00:00",
   "scanned": 112,
   "matches": [
     {
@@ -32,7 +32,7 @@
       "name": "D/B/A Sibanye-Stillwater Limite",
       "price": 10.109999656677246,
       "rating": "Buy",
-      "target": 13.477381,
+      "target": 13.457206,
       "support": 9.3100004196167,
       "resistance": 12.883437960051115,
       "growth": 0.643,
@@ -44,7 +44,7 @@
       ],
       "institutional_percent": 0.20973,
       "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +29.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 42.85269554077592,
+      "score": 42.7928290699002,
       "links": {
         "source": "https://finance.yahoo.com/quote/SBSW/",
         "analysis_source": "https://finance.yahoo.com/quote/SBSW/analysis/",
