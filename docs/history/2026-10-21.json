@@ -1,17 +1,17 @@
 {
-  "generated_utc": "2026-10-21T15:19:56+00:00",
+  "generated_utc": "2026-10-21T15:49:58+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "SBSW",
       "name": "D/B/A Sibanye-Stillwater Limite",
-      "price": 9.78499984741211,
+      "price": 9.800000190734863,
       "rating": "Buy",
-      "target": 13.545375,
+      "target": 13.5505,
       "support": 9.3100004196167,
       "resistance": 12.883437960051115,
       "growth": 0.643,
-      "relative_strength": 19.259331592389394,
+      "relative_strength": 19.315108541661317,
       "fcf": [
         1100000000.0,
         -11456000000.0,
@@ -19,7 +19,7 @@
       ],
       "institutional_percent": 0.20912,
       "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +19.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 40.77476517198344,
+      "score": 40.74640963122472,
       "links": {
         "source": "https://finance.yahoo.com/quote/SBSW/",
         "analysis_source": "https://finance.yahoo.com/quote/SBSW/analysis/",
@@ -30,21 +30,21 @@
     {
       "ticker": "IAG",
       "name": "Iamgold Corporation",
-      "price": 17.725000381469727,
+      "price": 17.809999465942383,
       "rating": "Buy",
       "target": 22.91667,
       "support": 16.81999969482422,
       "resistance": 22.31999969482422,
       "growth": 0.475,
-      "relative_strength": 18.504099545604547,
+      "relative_strength": 18.951296950114617,
       "fcf": [
         841000000.0,
         -73100000.0,
         -749000000.0
       ],
       "institutional_percent": 0.75997,
-      "reason": "Public analyst consensus: buy, 6 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +18.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 31.888463625386006,
+      "reason": "Public analyst consensus: buy, 6 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +19.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 31.85986974476062,
       "links": {
         "source": "https://finance.yahoo.com/quote/IAG/",
         "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
@@ -55,21 +55,21 @@
     {
       "ticker": "NU",
       "name": "Nu Holdings Ltd.",
-      "price": 15.244999885559082,
+      "price": 15.345000267028809,
       "rating": "Buy",
       "target": 18.87727,
       "support": 12.130999565124512,
       "resistance": 16.219999313354492,
       "growth": 0.521,
-      "relative_strength": 6.784316798133316,
+      "relative_strength": 7.444101127957636,
       "fcf": [
         3159695000.0,
         2224054000.0,
         1089186000.0
       ],
       "institutional_percent": 0.8247,
-      "reason": "Public analyst consensus: buy, 22 analysts; revenue growth 52.1% and 3-month benchmark-relative strength +6.8 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 27.757303877131346,
+      "reason": "Public analyst consensus: buy, 22 analysts; revenue growth 52.1% and 3-month benchmark-relative strength +7.4 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 27.746143452466026,
       "links": {
         "source": "https://finance.yahoo.com/quote/NU/",
         "analysis_source": "https://finance.yahoo.com/quote/NU/analysis/",
@@ -80,21 +80,21 @@
     {
       "ticker": "DLO",
       "name": "DLocal Limited",
-      "price": 15.25,
+      "price": 15.364999771118164,
       "rating": "Strong Buy",
       "target": 18.8,
       "support": 13.520000457763672,
       "resistance": 16.149999618530273,
       "growth": 0.558,
-      "relative_strength": 2.908284981027487,
+      "relative_strength": 3.3881463374000553,
       "fcf": [
         378672000.0,
         -55431000.0,
         275228000.0
       ],
       "institutional_percent": 0.72497004,
-      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +2.9 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 27.53150630073667,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +3.4 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 27.42265293637965,
       "links": {
         "source": "https://finance.yahoo.com/quote/DLO/",
         "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
@@ -105,21 +105,21 @@
     {
       "ticker": "BTG",
       "name": "B2Gold Corp",
-      "price": 5.215000152587891,
+      "price": 5.224999904632568,
       "rating": "Buy",
       "target": 6.35,
       "support": 4.920000076293945,
       "resistance": 5.8787001930387675,
       "growth": 0.14,
-      "relative_strength": 34.47079404053828,
+      "relative_strength": 34.6022977432892,
       "fcf": [
         895836000.0,
         877604000.0,
         638085000.0
       ],
       "institutional_percent": 0.69732004,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +34.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 23.49401941487489,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +34.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 23.4701350191527,
       "links": {
         "source": "https://finance.yahoo.com/quote/BTG/",
         "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
@@ -130,21 +130,21 @@
     {
       "ticker": "LYFT",
       "name": "Lyft, Inc.",
-      "price": 17.155000686645508,
+      "price": 17.114999771118164,
       "rating": "Buy",
       "target": 19.41297,
       "support": 14.444999694824219,
       "resistance": 17.979999542236328,
       "growth": 0.161,
-      "relative_strength": 16.959539187123518,
+      "relative_strength": 16.337327575471107,
       "fcf": [
         1115616000.0,
         766267000.0,
         -248063000.0
       ],
       "institutional_percent": 1.1168699,
-      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 16.1% and 3-month benchmark-relative strength +17.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 15.519487895867032,
+      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 16.1% and 3-month benchmark-relative strength +16.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 15.381058095083578,
       "links": {
         "source": "https://finance.yahoo.com/quote/LYFT/",
         "analysis_source": "https://finance.yahoo.com/quote/LYFT/analysis/",
