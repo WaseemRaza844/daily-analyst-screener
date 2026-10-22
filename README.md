@@ -102,3 +102,24 @@ The GitHub Pages dashboard includes a floating **Ask about stocks** panel. This 
 * Arbitrary symbols that are neither daily qualifiers nor on the explicitly configured research watchlist **cannot be researched live** from this static Pages site. Future real-time lookups require a properly secured data backend. Do not put API keys in public JavaScript or GitHub Pages.
 * Neither screener scores nor analyst ratings are personal buy/sell recommendations. Published stock data may be delayed; verify original sources.
 
+
+
+## Arbitrary ticker chat: free backend setup
+
+The dashboard's **Ask about stocks** button now uses a small, deterministic JavaScript assistant that explains dated, sourced numbers. The previously broken chat script was replaced.
+
+For ticker symbols *not already in a daily report*, enable the optional on-demand API using Cloudflare Workers and Finnhub. This is designed for low-volume family research without a paid AI subscription; third-party free-plan entitlements and market data may vary. No financial provider key is exposed to browsers.
+
+1. Create a free [Cloudflare](https://dash.cloudflare.com/) account, select **Workers & Pages**, and obtain the Cloudflare account ID.
+2. Create a Cloudflare API token with limited **Edit Cloudflare Workers** permissions (official [instructions](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)).
+3. Sign up for a Finnhub API key at [Finnhub](https://finnhub.io/) and verify that your free plan permits the quote, profile, basic-financials, and recommendation data needed for personal use. If these are not available on your plan, the API will return missing fields or an error; do not switch to paid endpoints.
+4. In [GitHub Actions secrets](https://github.com/WaseemRaza844/daily-analyst-screener/settings/secrets/actions), create **CLOUDFLARE_ACCOUNT_ID**, **CLOUDFLARE_API_TOKEN**, and **FINNHUB_API_KEY**. Never post keys in issues, chat messages, or source files.
+5. In repository **Settings → Secrets and variables → Actions → Variables**, create `STOCK_API_DEPLOY_ENABLED` with value `true`. This is an explicit opt-in so the deployment never uses credentials before you configure them.
+6. Open [Deploy Stock Research API](https://github.com/WaseemRaza844/daily-analyst-screener/actions/workflows/deploy-stock-api.yml) and click **Run workflow** on main.
+7. Copy the actual **workers.dev URL** reported in the successful deployment log. Edit the public `chat-config.js` file so `window.STOCK_RESEARCH_API_URL = "https://YOUR-WORKER.workers.dev";`. Commit it. **Only the public Worker URL** belongs in that file, never the Finnhub key.
+8. Test `https://YOUR-WORKER.workers.dev/health`, then `https://YOUR-WORKER.workers.dev/stock?ticker=CRWV` and the dashboard chat. The `/health` endpoint reports whether the Worker has its private key; it does not reveal the key.
+
+The Worker limits cross-origin browser access to the published dashboard origin, caches responses for approximately one hour, validates ticker format, and never places provider keys in HTML. Origin checks are not strong authentication; the publicly available URL should be assumed discoverable and should be used within free provider quotas. Current stock data is not guaranteed real-time, and free endpoints can return partial information or deny premium metrics.
+
+**Troubleshooting:** If chat does not open, perform a hard refresh to retrieve the updated `chat.js` file. If `/health` says `configured: false`, ensure the GitHub Actions deployment successfully injected `FINNHUB_API_KEY` as a Worker secret. If the backend returns an unavailable metric, the UI must show N/A rather than filling it in.
+
