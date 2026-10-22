@@ -30,6 +30,16 @@ function el(id){
  const context={document,window:{innerWidth:1200,innerHeight:800,STOCK_RESEARCH_API_URL:'https://worker.example.workers.dev'},location:{href:'https://example.github.io/site/'},URL,fetch,console,encodeURIComponent,Number,Array,Set,RegExp,Error,String};
  vm.createContext(context);vm.runInContext(src,context);
  const launch=elements['research-launch'],panel=elements['research-chat'];
+
+ const down={button:0,clientX:120,clientY:120,pointerId:1,target:launch};
+ launch.listeners.pointerdown(down);
+ launch.listeners.pointermove({clientX:320,clientY:270,pointerId:1});
+ assert.equal(launch.style.left,'300px','launcher dragged horizontally');
+ assert.equal(launch.style.top,'250px','launcher dragged vertically');
+ launch.listeners.pointerup({clientX:320,clientY:270,pointerId:1});
+ launch.click();
+ assert.equal(panel.hidden,true,'drag must not accidentally open chat');
+
  assert.equal(panel.hidden,true);launch.click();assert.equal(panel.hidden,false);elements['research-minimize'].click();assert.equal(panel.classList.contains('research-minimized'),true);elements['research-minimize'].click();assert.equal(panel.classList.contains('research-minimized'),false);launch.click();assert.equal(panel.hidden,true);launch.click();
  async function ask(q){elements['research-question'].value=q;elements['research-form'].listeners.submit({preventDefault(){}});await new Promise(r=>setImmediate(r));}
  await ask('Should I buy Nvidia or wait?');
