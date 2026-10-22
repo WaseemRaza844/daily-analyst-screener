@@ -89,3 +89,16 @@ The market provider is isolated in `src/data/provider.py`; implement another API
 ## Data use and risk
 
 `yfinance` is not affiliated with Yahoo; its documentation calls out Yahoo Finance data as intended for **personal use** and requires reviewing Yahoo's terms. This project does not scrape Finviz or MarketWatch pages, circumvent authentication, or promise authorized automated extraction under every provider policy. **The fact that a service is publicly accessible does not automatically authorize all automated uses.** Review current upstream terms before enabling hosted automation or sharing content. Research only; not personalized financial advice.
+
+
+## Dashboard stock research chat
+
+The GitHub Pages dashboard includes a floating **Ask about stocks** panel. This feature has no mandatory subscription, server-side account, or AI key.
+
+* Built-in explanations work without AI and are based on the selected dated dashboard snapshot.
+* A separate daily `CRWV` research snapshot is generated under `docs/research/CRWV.json` regardless of whether CRWV qualifies for the top-six screen. Additional research symbols can be added to `WATCH` in `src/data/research_watch.py`.
+* The **Enable free local AI** button optionally downloads a Qwen 2.5 0.5B model in a WebGPU-capable browser using WebLLM. This is an optional large download, may fail on devices with insufficient graphics memory or unsupported browsers, and has not been end-to-end verified on GitHub Pages.
+* Local AI rephrases available research data and must not invent metrics. The deterministic fallback remains available.
+* Arbitrary symbols that are neither daily qualifiers nor on the explicitly configured research watchlist **cannot be researched live** from this static Pages site. Future real-time lookups require a properly secured data backend. Do not put API keys in public JavaScript or GitHub Pages.
+* Neither screener scores nor analyst ratings are personal buy/sell recommendations. Published stock data may be delayed; verify original sources.
+
