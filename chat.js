@@ -67,7 +67,8 @@
     if(watchSnapshot) {
       const v=watchSnapshot.indicators||{};
       const targetDifference=watchSnapshot.target && watchSnapshot.price ? ((watchSnapshot.target/watchSnapshot.price-1)*100).toFixed(1)+'%' : 'unavailable';
-      factual=(watchSnapshot.name||sym)+' ('+sym+') was researched on '+watchSnapshot.generated_utc.slice(0,10)+'. Last price: 
+      factual=[watchSnapshot.name||sym,'('+sym+')','research snapshot dated',watchSnapshot.generated_utc.slice(0,10),'. Last price',fmt(watchSnapshot.price),'USD as of',watchSnapshot.price_date||'unknown', '. Analyst rating:',watchSnapshot.rating||'unavailable', '; target:',fmt(watchSnapshot.target),'USD; implied target difference:',targetDifference,'. Revenue growth:',fmt(watchSnapshot.growth==null?null:watchSnapshot.growth*100,'%'),'. P/E:',fmt(v.pe),'; forward P/E:',fmt(v.forward_pe),'; PEG:',fmt(v.peg),'; EPS:',fmt(v.eps),'; debt/equity:',fmt(v.debt_to_equity),'. This is a separate research snapshot, not a screen qualification or investment recommendation.'].join(' ');
+    }
     if(engine && (watchSnapshot || report?.matches?.some(x=>x.ticker===identify(question)))) {
       try {
         const completion=await engine.chat.completions.create({messages:[
