@@ -9,5 +9,5 @@ const chatAt=html.indexOf('chat.js?v=');
 assert.ok(configAt>0 && chatAt>configAt,'published HTML must load versioned config BEFORE chat script');
 assert.ok(gen.includes('chat-config.js?v=') && gen.includes('chat.js?v='),'generator must retain script loading order');
 assert.ok(config.includes('daily-stock-research-api.waseemraza844.workers.dev'),'public API URL configured');
-assert.ok(js.includes('Live lookup failed') && js.includes('live research API'),'live-first chat implementation required');
+assert.ok(js.includes('endpoint+"/chat"') && js.includes('history:history.slice(-4)'),'live-first chat implementation required');
 console.log('HTML script order, asset versioning, API connection, and live-first lookup: PASS');
