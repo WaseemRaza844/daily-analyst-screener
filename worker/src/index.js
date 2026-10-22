@@ -2,7 +2,7 @@
 // Finnhub key is a Worker secret, never exposed to GitHub Pages.
 const ORIGIN = "https://waseemraza844.github.io";
 function output(data,status=200){
- return new Response(JSON.stringify(data),{status,headers:{"content-type":"application/json; charset=utf-8","access-control-allow-origin":ORIGIN,"access-control-allow-methods":"GET, OPTIONS","cache-control":"public, max-age=300","x-content-type-options":"nosniff"}});
+ return new Response(JSON.stringify(data),{status,headers:{"content-type":"application/json; charset=utf-8","access-control-allow-origin":ORIGIN,"access-control-allow-methods":"GET, POST, OPTIONS","cache-control":"public, max-age=300","x-content-type-options":"nosniff"}});
 }
 function num(v){const x=Number(v);return v===null||v===undefined||v===""||!Number.isFinite(x)?null:x;}
 async function finnhub(path,ticker,key){
@@ -11,11 +11,35 @@ async function finnhub(path,ticker,key){
  if(!r.ok)throw new Error(r.status===429?"Market-data free-tier limit reached":"Market-data provider error ("+r.status+")");
  return r.json();
 }
-export default {async fetch(request,env,ctx){
+const handler = {async fetch(request,env,ctx){
  if(request.method==="OPTIONS")return new Response(null,{headers:{"access-control-allow-origin":ORIGIN,"access-control-allow-methods":"GET, OPTIONS","access-control-allow-headers":"content-type"}});
- if(request.method!=="GET")return output({error:"Method not allowed"},405);
+ if(!["GET","POST"].includes(request.method))return output({error:"Method not allowed"},405);
  const url=new URL(request.url);
  if(url.pathname==="/health")return output({status:"ok",configured:!!env.FINNHUB_API_KEY});
+ if(url.pathname==="/chat"){
+   if(request.method!=="POST")return output({error:"Method not allowed"},405);
+   if(!env.AI)return output({error:"Workers AI binding is unavailable"},503);
+   let body;
+   try {body=await request.json();} catch {return output({error:"Invalid JSON"},400);}
+   const question=String(body.question||"").slice(0,500).trim();
+   const symbol=String(body.ticker||"").trim().toUpperCase();
+   if(!question)return output({error:"Question required"},400);
+   if(symbol&&!/^[A-Z][A-Z0-9.-]{0,9}$/.test(symbol))return output({error:"Invalid ticker"},400);
+   let stock=null, dataWarning=null;
+   if(symbol){
+     const response=await handler.fetch(new Request(url.origin+"/stock?ticker="+encodeURIComponent(symbol)),env,ctx);
+     if(response.ok)stock=await response.json();
+     else {const detail=await response.json().catch(()=>({}));dataWarning=detail.error||"Stock data unavailable";}
+   }
+   const history=Array.isArray(body.history)?body.history.slice(-4).filter(x=>x&&["user","assistant"].includes(x.role)).map(x=>({role:x.role,content:String(x.content||"").slice(0,500)})):[];
+   const system="You are a concise plain-English stock research educator. Respond to the user's actual question, including follow-ups. Use ONLY verified numbers in DATA; never invent current market prices, targets, analyst consensus or news. Distinguish sourced analyst sentiment from your own assessment. If data is missing, explicitly say so; discuss what would need checking. Explain P/E, PEG, EPS, growth, leverage and FCF only as relevant. You can describe scenarios, risks, valuation considerations and conditions for buying versus waiting, but do not issue personalized orders to buy or sell. Keep to 100-180 words. Financial provider may report revenueGrowth as percent in source; DATA.growth is a fraction, multiply by 100 for percent. Data is dated; no live intraday advice. DATA: "+JSON.stringify({stock,dataWarning});
+   try{
+      const answer=await env.AI.run("@cf/meta/llama-3.2-3b-instruct",{messages:[{role:"system",content:system},...history,{role:"user",content:question}],max_tokens:280,temperature:0.2});
+      const content=typeof answer?.response==="string"?answer.response.trim():"";
+      if(!content)return output({error:"AI model returned no explanation"},503);
+      return output({answer:content,ticker:symbol||null,stock_date:stock?.price_date||null,source:stock?.source||null,warning:dataWarning,mode:"workers-ai"});
+   }catch(e){return output({error:"Workers AI currently unavailable: "+String(e.message||e).slice(0,180)},503);}
+ }
  if(url.pathname!=="/stock")return output({error:"Not found"},404);
  const ticker=(url.searchParams.get("ticker")||"").toUpperCase();
  if(!/^[A-Z][A-Z0-9.-]{0,9}$/.test(ticker))return output({error:"Invalid ticker"},400);
@@ -50,3 +74,5 @@ export default {async fetch(request,env,ctx){
  return response;
  }catch(e){return output({error:String(e.message||e)},503);}
  }};
+
+export default handler;
