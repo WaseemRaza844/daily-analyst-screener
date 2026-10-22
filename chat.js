@@ -24,7 +24,31 @@
       const targetDelta=asNumber(x.price)&&asNumber(x.target)?((x.target/x.price-1)*100).toFixed(1)+"%":"N/A";
       return (x.name||x.ticker)+" ("+x.ticker+") — saved source: "+x.source+". Price: $"+fmt(x.price)+"; analyst consensus: "+(x.rating||"N/A")+"; analyst target: $"+fmt(x.target)+" (difference "+targetDelta+"). Revenue growth: "+(asNumber(x.growth)===null?"N/A":fmt(x.growth*100)+"%")+". P/E: "+fmt(v.pe)+"; forward P/E: "+fmt(v.forward_pe)+"; PEG: "+fmt(v.peg)+"; EPS: "+fmt(v.eps)+". Free cash flow: "+(Array.isArray(x.fcf)?x.fcf.slice(0,2).map(v=>fmt(v,0)).join(" vs. "):"N/A")+". This is dated research, not a personal Buy/Sell recommendation.";
     }
-    const extract=q=>{const m=q.toUpperCase().match(/\b(?:ANALYZE|ANALYSE|TICKER|STOCK|ABOUT|FOR)\s+\$?([A-Z]{1,6})\b/)||q.toUpperCase().trim().match(/^\$?([A-Z]{1,6})$/);return m?.[1]||null;};
+    const companySymbols = {
+      "NVIDIA":"NVDA", "APPLE":"AAPL", "MICROSOFT":"MSFT",
+      "AMAZON":"AMZN", "ALPHABET":"GOOGL", "GOOGLE":"GOOGL",
+      "TESLA":"TSLA", "META":"META", "COREWEAVE":"CRWV",
+      "AMD":"AMD", "PALANTIR":"PLTR", "COINBASE":"COIN",
+      "NETFLIX":"NFLX", "NU HOLDINGS":"NU"
+    };
+    const stopwords = new Set(["THE","THIS","THAT","FOR","ABOUT","NOW","WAIT","BUY","SELL","STOCK","STOCKS","SHOULD","PLEASE","ANALYZE","ANALYSIS","WHAT","WHEN","WHY","CAN","YOU","IS","IT","MY","ME","I","A","AN"]);
+    function extract(question){
+      const original=question.trim();
+      const upper=original.toUpperCase();
+      for(const [name,symbol] of Object.entries(companySymbols)){
+        if(new RegExp("\\b"+name.replace(/ /g,"\\s+")+"\\b").test(upper)) return symbol;
+      }
+      const explicit=upper.match(/\\$([A-Z]{1,6})\\b/);
+      if(explicit&&!stopwords.has(explicit[1]))return explicit[1];
+      const direct=upper.match(/^\\$?([A-Z]{1,6})$/);
+      if(direct&&!stopwords.has(direct[1]))return direct[1];
+      const named=upper.match(/\\b(?:TICKER|SYMBOL|ANALYZE|ANALYSE)\\s+\\$?([A-Z]{1,6})\\b/);
+      if(named&&!stopwords.has(named[1]))return named[1];
+      const known=Array.from(document.querySelectorAll(".stock summary")).map(x=>x.textContent.split(" ")[0].toUpperCase()).filter(Boolean);
+      for(const ticker of known){if(new RegExp("\\b"+ticker+"\\b").test(upper))return ticker;}
+      const candidates=original.match(/\\b[A-Z]{2,6}\\b/g)||[];
+      return candidates.find(x=>!stopwords.has(x))||null;
+    }
     async function ask(q){
       say("user",q);send.disabled=true;
       try{
