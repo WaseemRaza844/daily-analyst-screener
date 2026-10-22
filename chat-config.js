@@ -1,1 +1,2 @@
-// Paste your deployed Cloudflare Worker workers.dev URL below. Do not put API keys here.\nwindow.STOCK_RESEARCH_API_URL = "";\n
+// Public Worker endpoint; no API credentials are stored in this file.
+window.STOCK_RESEARCH_API_URL = "https://daily-stock-research-api.waseemraza844.workers.dev";
