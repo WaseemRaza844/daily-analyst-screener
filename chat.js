@@ -38,7 +38,7 @@
       "AMAZON":"AMZN", "ALPHABET":"GOOGL", "GOOGLE":"GOOGL",
       "TESLA":"TSLA", "META":"META", "COREWEAVE":"CRWV",
       "AMD":"AMD", "PALANTIR":"PLTR", "COINBASE":"COIN",
-      "NETFLIX":"NFLX", "NU HOLDINGS":"NU"
+      "NETFLIX":"NFLX", "NU HOLDINGS":"NU", "AT&T":"T", "AT AND T":"T", "T-MOBILE":"TMUS", "T MOBILE":"TMUS"
     };
     const stopwords = new Set(["THE","THIS","THAT","FOR","ABOUT","NOW","WAIT","BUY","SELL","STOCK","STOCKS","SHOULD","PLEASE","ANALYZE","ANALYSIS","WHAT","WHEN","WHY","CAN","YOU","IS","IT","MY","ME","I","A","AN"]);
     function extract(question){
@@ -58,37 +58,44 @@
       const candidates=original.match(/\b[A-Z]{2,6}\b/g)||[];
       return candidates.find(x=>!stopwords.has(x))||null;
     }
+    let activeSymbol=null;
+    const history=[];
     async function ask(q){
-      say("user",q);send.disabled=true;
+      if(send.disabled)return;
+      say("user",q);
+      send.disabled=true;
+      const found=extract(q);
+      const symbol=found||activeSymbol;
+      if(found)activeSymbol=found;
       try{
-        const symbol=extract(q);
+        const endpoint=apiUrl.endsWith("/")?apiUrl.slice(0,-1):apiUrl;
+        const response=await fetch(endpoint+"/chat",{
+          method:"POST",headers:{"content-type":"application/json"},
+          body:JSON.stringify({question:q,ticker:symbol||"",history:history.slice(-4)}),
+          cache:"no-store"
+        });
+        const result=await response.json();
+        if(!response.ok)throw Error(result.error||"AI service unavailable");
+        if(!result.answer)throw Error("No AI answer returned");
+        say("assistant",result.answer+(result.stock_date?"\n\nPrice data date: "+result.stock_date+".":"")+(result.warning?"\nData warning: "+result.warning:""));
+        history.push({role:"user",content:q},{role:"assistant",content:result.answer});
+        if(history.length>8)history.splice(0,history.length-8);
+      }catch(error){
+        const reason=String(error.message||error);
         if(symbol){
-          let data=null, liveError=null;
-          if(apiUrl){
-            try {
-              const endpoint=apiUrl.endsWith("/")?apiUrl.slice(0,-1):apiUrl;
-              const response=await fetch(endpoint+"/stock?ticker="+encodeURIComponent(symbol),{cache:"no-store"});
-              const body=await response.json();
-              if(!response.ok)throw Error(body.error||"Data provider unavailable");
-              data={...body,source:"live research API"};
-            } catch(err){liveError=err.message||String(err);}
-          }
-          if(!data)data=await snapshot(symbol);
-          if(data){
-            say("assistant",summary(data)+(liveError?"\n\nLive lookup failed ("+liveError+"); showing a saved snapshot instead.":""));
-          } else {
-            say("assistant","Live data unavailable for "+symbol+(liveError?": "+liveError:"")+". Verify independently at https://finance.yahoo.com/quote/"+symbol+"/");
-          }
-        } else {
-          const key=Object.keys(dictionary).find(k=>q.toLowerCase().includes(k));
-          say("assistant",key?dictionary[key]:"Try 'Analyze CRWV', 'Analyze NU', 'Explain forward P/E', or 'What is PEG?'. The assistant explains verified numbers and flags unavailable information.");
+          let stock=await snapshot(symbol);
+          if(stock)say("assistant",summary(stock)+"\n\nConversational AI unavailable: "+reason);
+          else say("assistant","Conversational AI is currently unavailable: "+reason+". No saved stock data for "+symbol+".");
+        }else{
+          const term=Object.keys(dictionary).find(k=>q.toLowerCase().includes(k));
+          say("assistant",(term?dictionary[term]:"I could not reach the AI service.")+"\n\nService detail: "+reason);
         }
-      }catch(error){say("assistant","Could not retrieve ticker data: "+error.message);}finally{send.disabled=false;}
+      }finally{send.disabled=false;}
     }
     form.addEventListener("submit",e=>{e.preventDefault();const q=input.value.trim();if(q){input.value="";ask(q);}});
     document.querySelectorAll("[data-question]").forEach(b=>b.addEventListener("click",()=>ask(b.dataset.question)));
     const ai=get("research-enable-ai");if(ai){ai.hidden=true;}
-    say("assistant","Chat ready. Ticker questions request the live research API first. If that fails, a dated snapshot may be shown with a warning. I explain reported metrics but am not yet a generative AI chatbot.");
+    say("assistant","AI chat enabled. Ask about any supported ticker or company, and ask follow-up questions in plain English. Responses use available financial data and should not be treated as trading instructions.");
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();
