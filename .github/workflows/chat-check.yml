@@ -5,7 +5,7 @@ on:
     paths:
       - 'chat.js'
       - 'chat-config.js'
-      - 'tests/chat.test.cjs'
+      - 'tests/chat*.test.cjs'
       - '.github/workflows/chat-check.yml'
   workflow_dispatch:
 permissions:
