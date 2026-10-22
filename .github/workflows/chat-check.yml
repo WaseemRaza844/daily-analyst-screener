@@ -1,0 +1,27 @@
+name: Chat UI Regression Tests
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'chat.js'
+      - 'chat-config.js'
+      - 'tests/chat.test.cjs'
+      - '.github/workflows/chat-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chat-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check chat.js
+          node --check chat-config.js
+          node --check tests/chat.test.cjs
+      - name: Test chat interactions and ticker parsing
+        run: node --test tests/chat.test.cjs
