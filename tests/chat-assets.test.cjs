@@ -1,0 +1,13 @@
+const fs=require('node:fs');
+const assert=require('node:assert/strict');
+const html=fs.readFileSync('index.html','utf8');
+const gen=fs.readFileSync('src/report/dashboard.py','utf8');
+const config=fs.readFileSync('chat-config.js','utf8');
+const js=fs.readFileSync('chat.js','utf8');
+const configAt=html.indexOf('chat-config.js?v=');
+const chatAt=html.indexOf('chat.js?v=');
+assert.ok(configAt>0 && chatAt>configAt,'published HTML must load versioned config BEFORE chat script');
+assert.ok(gen.includes('chat-config.js?v=') && gen.includes('chat.js?v='),'generator must retain script loading order');
+assert.ok(config.includes('daily-stock-research-api.waseemraza844.workers.dev'),'public API URL configured');
+assert.ok(js.includes('Live lookup failed') && js.includes('live research API'),'live-first chat implementation required');
+console.log('HTML script order, asset versioning, API connection, and live-first lookup: PASS');
