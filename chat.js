@@ -79,7 +79,7 @@
     form.addEventListener("submit",e=>{e.preventDefault();const q=input.value.trim();if(q){input.value="";ask(q);}});
     document.querySelectorAll("[data-question]").forEach(b=>b.addEventListener("click",()=>ask(b.dataset.question)));
     const ai=get("research-enable-ai");if(ai){ai.hidden=true;}
-    say("assistant","Chat ready. Ask about a ticker or a financial indicator. Dated dashboard metrics are available now; arbitrary ticker lookup requires connecting the free backend.");
+    say("assistant","Chat ready. Ticker questions request the live research API first. If that fails, a dated snapshot may be shown with a warning. I explain reported metrics but am not yet a generative AI chatbot.");
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();
