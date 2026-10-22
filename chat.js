@@ -40,7 +40,7 @@
       "AMD":"AMD", "PALANTIR":"PLTR", "COINBASE":"COIN",
       "NETFLIX":"NFLX", "NU HOLDINGS":"NU", "AT&T":"T", "AT AND T":"T", "T-MOBILE":"TMUS", "T MOBILE":"TMUS"
     };
-    const stopwords = new Set(["THE","THIS","THAT","FOR","ABOUT","NOW","WAIT","BUY","SELL","STOCK","STOCKS","SHOULD","PLEASE","ANALYZE","ANALYSIS","WHAT","WHEN","WHY","CAN","YOU","IS","IT","MY","ME","I","A","AN"]);
+    const stopwords = new Set(["THE","THIS","THAT","FOR","ABOUT","NOW","WAIT","BUY","SELL","STOCK","STOCKS","SHOULD","PLEASE","ANALYZE","ANALYSIS","WHAT","WHEN","WHY","CAN","YOU","IS","IT","MY","ME","I","A","AN","PEG","EPS","FCF","PE","ROE","EBITDA"]);
     function extract(question){
       const original=question.trim();
       const upper=original.toUpperCase();
