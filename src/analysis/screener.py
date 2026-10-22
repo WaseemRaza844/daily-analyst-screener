@@ -20,6 +20,8 @@ class ScreenResult:
     reason: str
     score: float
     links: dict
+    indicators: dict | None = None
+    analyst_count: int | None = None
 
 
 def pct_change(history, lookback=63):
@@ -84,7 +86,8 @@ def evaluate(ticker, meta, prices, benchmark, cfg):
               f'Latest annual free cash flow is positive and higher than the prior annual observation.')
     return ScreenResult(ticker, meta['name'], price, rating.replace('_', ' ').title(), target,
                         support, resistance, growth, relative, fcf, holding, reason, score,
-                        {k: meta[k] for k in ('source', 'analysis_source', 'cash_source', 'financials_source')})
+                        {k: meta[k] for k in ('source', 'analysis_source', 'cash_source', 'financials_source')},
+                        meta.get('valuation') or {}, int(count))
 
 
 def scan(provider, cfg, logger):
