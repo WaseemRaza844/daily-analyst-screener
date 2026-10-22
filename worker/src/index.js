@@ -49,4 +49,4 @@ export default {async fetch(request,env,ctx){
  ctx.waitUntil(cache.put(key,new Response(JSON.stringify(result),{headers:{"content-type":"application/json","access-control-allow-origin":ORIGIN,"cache-control":"public, max-age=3600"}})));
  return response;
  }catch(e){return output({error:String(e.message||e)},503);}
- }}};
+ }};
