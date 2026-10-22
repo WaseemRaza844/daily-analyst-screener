@@ -6,7 +6,7 @@ function output(data,status=200){
 }
 function num(v){const x=Number(v);return v===null||v===undefined||v===""||!Number.isFinite(x)?null:x;}
 async function finnhub(path,ticker,key){
- const u=new URL("https://finnhub.io/api/v1/"+path);u.searchParams.set("symbol",ticker);u.searchParams.set("token",key);
+ const u=new URL("https://finnhub.io/api/v1/"+path);u.searchParams.set("symbol",ticker);u.searchParams.set("token",key);if(path==="stock/metric")u.searchParams.set("metric","all");
  const r=await fetch(u.toString(),{headers:{"accept":"application/json"}});
  if(!r.ok)throw new Error(r.status===429?"Market-data free-tier limit reached":"Market-data provider error ("+r.status+")");
  return r.json();
