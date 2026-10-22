@@ -38,7 +38,7 @@ export default {async fetch(request,env,ctx){
  const result={
   ticker,name:profile.name||ticker,price:num(quote.c),price_date:new Date((quote.t||Date.now()/1000)*1000).toISOString().slice(0,10),
   generated_utc:new Date().toISOString(),rating,analyst_count:total||null,target:num(m.targetMeanPrice)||num(m.priceTargetMean)||null,
-  growth:num(m.revenueGrowthTTMYoy),indicators:{
+  growth:num(m.revenueGrowthTTMYoy)===null?null:num(m.revenueGrowthTTMYoy)/100,indicators:{
     pe:num(m.peTTM),forward_pe:num(m.peForwardAnnual),peg:num(m.pegRatio),eps:num(m.epsTTM),
     price_to_book:num(m.pbAnnual),roe:num(m.roeTTM),debt_to_equity:num(m.totalDebtEquityAnnual),
     market_cap:num(profile.marketCapitalization)?Number(profile.marketCapitalization)*1e6:null,
