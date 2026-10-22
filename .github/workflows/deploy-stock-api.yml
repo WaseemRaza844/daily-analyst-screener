@@ -12,15 +12,30 @@ jobs:
   deploy:
     if: ${{ vars.STOCK_API_DEPLOY_ENABLED == 'true' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy Cloudflare Worker
-        uses: cloudflare/wrangler-action@v4
+      - uses: actions/setup-node@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: worker
-          secrets: |
-            FINNHUB_API_KEY
+          node-version: '24'
+      - name: Check required credentials
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "::error::Missing CLOUDFLARE_API_TOKEN"; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "::error::Missing CLOUDFLARE_ACCOUNT_ID"; exit 1; }
+          test -n "$FINNHUB_API_KEY" || { echo "::error::Missing FINNHUB_API_KEY"; exit 1; }
+      - name: Deploy Worker and secret in one request
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: |
+          set -euo pipefail
+          umask 077
+          trap 'rm -f secrets.ci.json' EXIT
+          python -c 'import json,os;open("secrets.ci.json","w").write(json.dumps({"FINNHUB_API_KEY":os.environ["FINNHUB_API_KEY"]}))'
+          npx --yes wrangler@4 deploy --secrets-file secrets.ci.json
