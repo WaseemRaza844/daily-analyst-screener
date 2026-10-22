@@ -1,0 +1,26 @@
+name: Deploy Stock Research API
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'worker/**'
+      - '.github/workflows/deploy-stock-api.yml'
+permissions:
+  contents: read
+jobs:
+  deploy:
+    if: ${{ vars.STOCK_API_DEPLOY_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy Cloudflare Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          secrets: |
+            FINNHUB_API_KEY
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
