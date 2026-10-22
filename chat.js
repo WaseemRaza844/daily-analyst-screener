@@ -38,15 +38,15 @@
       for(const [name,symbol] of Object.entries(companySymbols)){
         if(new RegExp("\\b"+name.replace(/ /g,"\\s+")+"\\b").test(upper)) return symbol;
       }
-      const explicit=upper.match(/\\$([A-Z]{1,6})\\b/);
+      const explicit=upper.match(/\$([A-Z]{1,6})\b/);
       if(explicit&&!stopwords.has(explicit[1]))return explicit[1];
-      const direct=upper.match(/^\\$?([A-Z]{1,6})$/);
+      const direct=upper.match(/^\$?([A-Z]{1,6})$/);
       if(direct&&!stopwords.has(direct[1]))return direct[1];
-      const named=upper.match(/\\b(?:TICKER|SYMBOL|ANALYZE|ANALYSE)\\s+\\$?([A-Z]{1,6})\\b/);
+      const named=upper.match(/\b(?:TICKER|SYMBOL|ANALYZE|ANALYSE)\s+\$?([A-Z]{1,6})\b/);
       if(named&&!stopwords.has(named[1]))return named[1];
       const known=Array.from(document.querySelectorAll(".stock summary")).map(x=>x.textContent.split(" ")[0].toUpperCase()).filter(Boolean);
       for(const ticker of known){if(new RegExp("\\b"+ticker+"\\b").test(upper))return ticker;}
-      const candidates=original.match(/\\b[A-Z]{2,6}\\b/g)||[];
+      const candidates=original.match(/\b[A-Z]{2,6}\b/g)||[];
       return candidates.find(x=>!stopwords.has(x))||null;
     }
     async function ask(q){
