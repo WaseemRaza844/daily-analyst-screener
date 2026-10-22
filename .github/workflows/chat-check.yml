@@ -24,4 +24,4 @@ jobs:
           node --check chat-config.js
           node --check tests/chat.test.cjs
       - name: Test chat interactions and ticker parsing
-        run: node --test tests/chat.test.cjs
+        run: node --test tests/chat.test.cjs tests/chat-assets.test.cjs
