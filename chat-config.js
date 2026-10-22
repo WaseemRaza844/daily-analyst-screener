@@ -1,0 +1,1 @@
+// Paste your deployed Cloudflare Worker workers.dev URL below. Do not put API keys here.\nwindow.STOCK_RESEARCH_API_URL = "";\n
