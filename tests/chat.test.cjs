@@ -30,6 +30,7 @@ function element(id) {
   const calls=[];
   const fetch=async url=>{
     const u=String(url);calls.push(u);
+    if(u.includes('/stock?ticker=CRWV'))return {ok:true,json:async()=>({ticker:'CRWV',name:'CoreWeave',price:100,rating:'Mixed / Hold',target:110,indicators:{},source:'Finnhub'})};
     if(u.includes('/stock?ticker=NVDA'))return {ok:true,json:async()=>({
       ticker:'NVDA',name:'NVIDIA',price:200,rating:'Buy-leaning',target:230,
       growth:12,indicators:{pe:30,forward_pe:25,peg:1.5,eps:7},source:'Finnhub'
@@ -52,6 +53,11 @@ function element(id) {
   assert.ok(calls.some(x=>x.includes('ticker=NVDA')),'company name resolved to NVDA');
   assert.ok(!calls.some(x=>x.includes('ticker=THE')),'THE must not be treated as ticker');
   assert.ok(elements['research-messages'].children.some(x=>x.textContent.includes('NVIDIA')),'answer displayed');
+  elements['research-question'].value='Analyze CoreWeave';
+  elements['research-form'].listeners.submit({preventDefault(){}});
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.ok(calls.some(x=>x.includes('ticker=CRWV')),'CoreWeave uses live API');
+  assert.ok(elements['research-messages'].children.some(x=>x.textContent.includes('CoreWeave')),'CoreWeave answer displayed');
   elements['research-close'].click();
   assert.equal(panel.hidden,true);
   console.log('Chat syntax, open/close, NVIDIA lookup, and response: PASS');
