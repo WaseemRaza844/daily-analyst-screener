@@ -58,7 +58,79 @@
     if(busy) return;
     busy=true;$('research-send').disabled=true;say('user',question);
     if(!report || report.generated_utc.slice(0,10)!==$('day').value) await loadReport();
-    const factual=grounded(question);
+    const sym=identify(question);
+    let watchSnapshot=null;
+    if(sym && !(report?.matches||[]).some(x=>x.ticker===sym) && sym==='CRWV') {
+      try { const response=await fetch('docs/research/CRWV.json',{cache:'no-store'}); if(response.ok) watchSnapshot=await response.json(); } catch(e) {}
+    }
+    let factual=grounded(question);
+    if(watchSnapshot) {
+      const v=watchSnapshot.indicators||{};
+      const targetDifference=watchSnapshot.target && watchSnapshot.price ? ((watchSnapshot.target/watchSnapshot.price-1)*100).toFixed(1)+'%' : 'unavailable';
+      factual=(watchSnapshot.name||sym)+' ('+sym+') was researched on '+watchSnapshot.generated_utc.slice(0,10)+'. Last price: 
+    if(engine && (watchSnapshot || report?.matches?.some(x=>x.ticker===identify(question)))) {
+      try {
+        const completion=await engine.chat.completions.create({messages:[
+          {role:'system',content:'Explain stock financial information in friendly, plain language using ONLY the following verified saved dashboard data. Never invent facts, recent news, prices, forecasts, or assert a buy/sell recommendation. Distinguish analyst rating from personalized advice. If data is missing say so. Answer under 140 words. Context: '+JSON.stringify(watchSnapshot || report.matches.find(x=>x.ticker===identify(question)))},
+          {role:'user',content:question}
+        ],temperature:0.2,max_tokens:230});
+        say('assistant',(completion.choices?.[0]?.message?.content||factual)+'\n\nSaved report date: '+(watchSnapshot?.generated_utc||report.generated_utc).slice(0,10)+'.');
+      }catch(e){say('assistant',factual+'\n\nLocal AI could not complete; showing verified metrics instead.');}
+    } else say('assistant',factual);
+    busy=false;$('research-send').disabled=false;
+  }
+  $('research-launch').addEventListener('click',()=>{panel.hidden=!panel.hidden;if(!panel.hidden) input.focus();});
+  $('research-close').addEventListener('click',()=>panel.hidden=true);
+  $('research-form').addEventListener('submit',e=>{e.preventDefault();let q=input.value.trim();if(q){input.value='';answer(q);}});
+  document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>answer(b.dataset.question)));
+  $('day')?.addEventListener('change',()=>{report=null;say('assistant','Report date changed. I will use that date for the next answer.');});
+  $('research-enable-ai').addEventListener('click',async ()=>{
+    if(engine) return;
+    if(!navigator.gpu){say('assistant','Local AI requires WebGPU in a compatible browser. The built-in metric explanations still work for free.');return;}
+    $('research-enable-ai').disabled=true;
+    say('assistant','Loading optional Qwen 0.5B locally. This downloads a large model to your browser and requires sufficient GPU memory. No API key or paid service is used.');
+    try{
+      const mlc=await import('https://esm.run/@mlc-ai/web-llm');
+      engine=await mlc.CreateMLCEngine('Qwen2.5-0.5B-Instruct-q4f16_1-MLC',{initProgressCallback:p=>{$('research-ai-status').textContent=p.text||'Loading model';}});
+      $('research-ai-status').textContent='Local AI ready';
+      say('assistant','Local AI enabled. Answers use saved dashboard data and may still make errors.');
+    }catch(err){$('research-ai-status').textContent='Unavailable';say('assistant','Local AI did not load ('+String(err.message||err).slice(0,100)+'). The free metric-based assistant remains available.');$('research-enable-ai').disabled=false;}
+  });
+  loadReport(); say('assistant','Ask me about a stock in today\'s table or what P/E, PEG or cash flow means. Optional local AI can rephrase saved numbers in simple words.');
+})();
++fmt(watchSnapshot.price)+' (price date '+(watchSnapshot.price_date||'unavailable')+'). Analyst rating: '+(watchSnapshot.rating||'unavailable')+'; target: 
+    if(engine && report?.matches?.some(x=>x.ticker===identify(question))) {
+      try {
+        const completion=await engine.chat.completions.create({messages:[
+          {role:'system',content:'Explain stock financial information in friendly, plain language using ONLY the following verified saved dashboard data. Never invent facts, recent news, prices, forecasts, or assert a buy/sell recommendation. Distinguish analyst rating from personalized advice. If data is missing say so. Answer under 140 words. Context: '+JSON.stringify(report.matches.find(x=>x.ticker===identify(question)))},
+          {role:'user',content:question}
+        ],temperature:0.2,max_tokens:230});
+        say('assistant',(completion.choices?.[0]?.message?.content||factual)+'\n\nSaved report date: '+report.generated_utc.slice(0,10)+'.');
+      }catch(e){say('assistant',factual+'\n\nLocal AI could not complete; showing verified metrics instead.');}
+    } else say('assistant',factual);
+    busy=false;$('research-send').disabled=false;
+  }
+  $('research-launch').addEventListener('click',()=>{panel.hidden=!panel.hidden;if(!panel.hidden) input.focus();});
+  $('research-close').addEventListener('click',()=>panel.hidden=true);
+  $('research-form').addEventListener('submit',e=>{e.preventDefault();let q=input.value.trim();if(q){input.value='';answer(q);}});
+  document.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>answer(b.dataset.question)));
+  $('day')?.addEventListener('change',()=>{report=null;say('assistant','Report date changed. I will use that date for the next answer.');});
+  $('research-enable-ai').addEventListener('click',async ()=>{
+    if(engine) return;
+    if(!navigator.gpu){say('assistant','Local AI requires WebGPU in a compatible browser. The built-in metric explanations still work for free.');return;}
+    $('research-enable-ai').disabled=true;
+    say('assistant','Loading optional Qwen 0.5B locally. This downloads a large model to your browser and requires sufficient GPU memory. No API key or paid service is used.');
+    try{
+      const mlc=await import('https://esm.run/@mlc-ai/web-llm');
+      engine=await mlc.CreateMLCEngine('Qwen2.5-0.5B-Instruct-q4f16_1-MLC',{initProgressCallback:p=>{$('research-ai-status').textContent=p.text||'Loading model';}});
+      $('research-ai-status').textContent='Local AI ready';
+      say('assistant','Local AI enabled. Answers use saved dashboard data and may still make errors.');
+    }catch(err){$('research-ai-status').textContent='Unavailable';say('assistant','Local AI did not load ('+String(err.message||err).slice(0,100)+'). The free metric-based assistant remains available.');$('research-enable-ai').disabled=false;}
+  });
+  loadReport(); say('assistant','Ask me about a stock in today\'s table or what P/E, PEG or cash flow means. Optional local AI can rephrase saved numbers in simple words.');
+})();
++fmt(watchSnapshot.target)+'; implied target difference: '+targetDifference+'. Revenue growth: '+fmt(watchSnapshot.growth==null?null:watchSnapshot.growth*100,'%')+'. P/E: '+fmt(v.pe)+'; forward P/E: '+fmt(v.forward_pe)+'; PEG: '+fmt(v.peg)+'; earnings per share: '+fmt(v.eps)+'; debt/equity: '+fmt(v.debt_to_equity)+'. '+ 'This ticker is on the separate research watchlist, not necessarily a qualifying screened stock. Data is dated and incomplete fields are not investment signals.';
+    }
     if(engine && report?.matches?.some(x=>x.ticker===identify(question))) {
       try {
         const completion=await engine.chat.completions.create({messages:[
