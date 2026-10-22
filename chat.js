@@ -21,8 +21,17 @@
     }
     function summary(x){
       const v=x.indicators||{};
-      const targetDelta=asNumber(x.price)&&asNumber(x.target)?((x.target/x.price-1)*100).toFixed(1)+"%":"N/A";
-      return (x.name||x.ticker)+" ("+x.ticker+") — saved source: "+x.source+". Price: $"+fmt(x.price)+"; analyst consensus: "+(x.rating||"N/A")+"; analyst target: $"+fmt(x.target)+" (difference "+targetDelta+"). Revenue growth: "+(asNumber(x.growth)===null?"N/A":fmt(x.growth*100)+"%")+". P/E: "+fmt(v.pe)+"; forward P/E: "+fmt(v.forward_pe)+"; PEG: "+fmt(v.peg)+"; EPS: "+fmt(v.eps)+". Free cash flow: "+(Array.isArray(x.fcf)?x.fcf.slice(0,2).map(v=>fmt(v,0)).join(" vs. "):"N/A")+". This is dated research, not a personal Buy/Sell recommendation.";
+      const money=value=>asNumber(value)===null?"unavailable":"$"+fmt(value);
+      const percent=value=>asNumber(value)===null?"unavailable":fmt(Number(value)*100)+"%";
+      const difference=asNumber(x.price)>0&&asNumber(x.target)!==null?fmt((Number(x.target)/Number(x.price)-1)*100)+"%":"unavailable";
+      const hasCash=Array.isArray(x.fcf)&&x.fcf.length>0;
+      const earnings=asNumber(v.pe)===null?"Trailing P/E is unavailable (often because earnings are negative or missing).":"Trailing P/E is "+fmt(v.pe)+".";
+      const growth=asNumber(x.growth)===null?"Revenue growth is unavailable.":"Reported year-over-year revenue growth is "+percent(x.growth)+".";
+      const rating=(x.rating||"unavailable")+" (source-derived, not a personalized recommendation)";
+      const valuation="Forward P/E: "+fmt(v.forward_pe)+"; PEG: "+fmt(v.peg)+"; earnings per share: "+fmt(v.eps)+".";
+      const cash=hasCash?"Available free cash flow observations: "+x.fcf.slice(0,2).map(x=>money(x)).join(" versus ")+".":"Free cash flow was not provided by this live source.";
+      const date=x.price_date||x.date||x.generated_utc?.slice(0,10)||"not stated";
+      return (x.name||x.ticker)+" ("+x.ticker+") — "+(x.source||"research data")+", quote date "+date+". The reported price is "+money(x.price)+". Analyst sentiment: "+rating+". The analyst target is "+money(x.target)+" (target versus reported price: "+difference+"). "+growth+" "+earnings+" "+valuation+" "+cash+" Review earnings quality, business risk and valuation before making a decision; a positive analyst rating alone is not a sufficient reason to buy.";
     }
     const companySymbols = {
       "NVIDIA":"NVDA", "APPLE":"AAPL", "MICROSOFT":"MSFT",
