@@ -20,7 +20,7 @@ export default {async fetch(request,env,ctx){
  const ticker=(url.searchParams.get("ticker")||"").toUpperCase();
  if(!/^[A-Z][A-Z0-9.-]{0,9}$/.test(ticker))return output({error:"Invalid ticker"},400);
  if(!env.FINNHUB_API_KEY)return output({error:"Backend not configured: FINNHUB_API_KEY is missing"},503);
- const key=new Request("https://cache.local/stock/"+ticker);
+ const key=new Request("https://cache.local/v2/stock/"+ticker);
  const cache=caches.default;
  const cached=await cache.match(key);if(cached)return cached;
  try{
