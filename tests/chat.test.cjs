@@ -3,9 +3,19 @@ const fs=require('node:fs');
 const vm=require('node:vm');
 const src=fs.readFileSync('chat.js','utf8');
 new vm.Script(src);
-function el(id){return {id,hidden:id==='research-chat',disabled:false,value:'',listeners:{},children:[],textContent:'',setAttribute(){},addEventListener(k,fn){this.listeners[k]=fn},appendChild(c){this.children.push(c)},focus(){},click(){this.onclick?.()},scrollTop:0,scrollHeight:100};}
+function el(id){
+  const classes=new Set();
+  return {id,hidden:id==='research-chat',disabled:false,value:'',dataset:{},style:{},offsetWidth:350,offsetHeight:500,
+    listeners:{},children:[],textContent:'',attributes:{},
+    classList:{toggle(x){if(classes.has(x)){classes.delete(x);return false;}classes.add(x);return true;},contains(x){return classes.has(x);}},
+    setAttribute(k,v){this.attributes[k]=v;},addEventListener(k,fn){this.listeners[k]=fn;},
+    appendChild(c){this.children.push(c)},focus(){},click(){this.onclick?.()},
+    querySelector(){return el('header')},getBoundingClientRect(){return {left:100,top:100}},
+    setPointerCapture(){},scrollTop:0,scrollHeight:100
+  };
+}
 (async()=>{
- const ids=['research-chat','research-launch','research-close','research-form','research-question','research-messages','research-send','day','research-enable-ai'];
+ const ids=['research-chat','research-launch','research-close','research-form','research-question','research-messages','research-send','day','research-enable-ai','research-minimize'];
  const elements=Object.fromEntries(ids.map(x=>[x,el(x)]));
  const document={readyState:'complete',currentScript:{src:'https://example.github.io/site/chat.js'},getElementById:id=>elements[id],createElement:()=>el('message'),querySelectorAll:()=>[],addEventListener(){}};
  const requests=[];
@@ -17,10 +27,10 @@ function el(id){return {id,hidden:id==='research-chat',disabled:false,value:'',l
    }
    return {ok:false,json:async()=>({error:'Not found'})};
  };
- const context={document,window:{STOCK_RESEARCH_API_URL:'https://worker.example.workers.dev'},location:{href:'https://example.github.io/site/'},URL,fetch,console,encodeURIComponent,Number,Array,Set,RegExp,Error,String};
+ const context={document,window:{innerWidth:1200,innerHeight:800,STOCK_RESEARCH_API_URL:'https://worker.example.workers.dev'},location:{href:'https://example.github.io/site/'},URL,fetch,console,encodeURIComponent,Number,Array,Set,RegExp,Error,String};
  vm.createContext(context);vm.runInContext(src,context);
  const launch=elements['research-launch'],panel=elements['research-chat'];
- assert.equal(panel.hidden,true);launch.click();assert.equal(panel.hidden,false);launch.click();assert.equal(panel.hidden,true);launch.click();
+ assert.equal(panel.hidden,true);launch.click();assert.equal(panel.hidden,false);elements['research-minimize'].click();assert.equal(panel.classList.contains('research-minimized'),true);elements['research-minimize'].click();assert.equal(panel.classList.contains('research-minimized'),false);launch.click();assert.equal(panel.hidden,true);launch.click();
  async function ask(q){elements['research-question'].value=q;elements['research-form'].listeners.submit({preventDefault(){}});await new Promise(r=>setImmediate(r));}
  await ask('Should I buy Nvidia or wait?');
  await ask('What about its PEG?');
