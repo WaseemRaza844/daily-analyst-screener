@@ -29,13 +29,15 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Run screener
         run: python -m src.main
+      - name: Refresh requested research tickers
+        run: python -m src.data.research_watch
       - name: Build historical dashboard
         run: python -m src.report.dashboard
       - name: Persist last seven days in repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html docs/index.html docs/history docs/.nojekyll
+          git add index.html docs/index.html docs/history docs/research docs/.nojekyll
           if ! git diff --cached --quiet; then
             git commit -m "Update daily research dashboard [skip ci]"
             git push origin HEAD:main
