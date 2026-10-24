@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-24T14:04:18+00:00",
+  "generated_utc": "2026-10-24T14:14:08+00:00",
   "scanned": 112,
   "matches": [
     {
@@ -71,11 +71,11 @@
         "financials_source": "https://finance.yahoo.com/quote/IAG/financials/"
       },
       "indicators": {
-        "pe": 8.934066,
-        "forward_pe": 7.402113,
+        "pe": 8.212121,
+        "forward_pe": 6.8509026,
         "peg": null,
-        "eps": 1.82,
-        "forward_eps": 2.19667,
+        "eps": 1.98,
+        "forward_eps": 2.37341,
         "price_to_book": 2.1229925,
         "market_cap": 9284460544.0,
         "profit_margin": 0.31403,
@@ -117,7 +117,7 @@
       "indicators": {
         "pe": 20.767122,
         "forward_pe": 13.43781,
-        "peg": null,
+        "peg": 0.768,
         "eps": 0.73,
         "forward_eps": 1.12816,
         "price_to_book": 5.5267954,
@@ -203,10 +203,10 @@
         "financials_source": "https://finance.yahoo.com/quote/LYFT/financials/"
       },
       "indicators": {
-        "pe": 2.3758767,
+        "pe": 2.4657934,
         "forward_pe": 7.8493156,
         "peg": null,
-        "eps": 7.13,
+        "eps": 6.87,
         "forward_eps": 2.15815,
         "price_to_book": 2.1244044,
         "market_cap": 6412472320.0,
