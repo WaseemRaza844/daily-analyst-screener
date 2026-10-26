@@ -1,0 +1,188 @@
+{
+  "generated_utc": "2026-10-26T16:51:05+00:00",
+  "scanned": 112,
+  "matches": [
+    {
+      "ticker": "SBSW",
+      "name": "D/B/A Sibanye-Stillwater Limite",
+      "price": 9.265000343322754,
+      "rating": "Buy",
+      "target": 13.343635,
+      "support": 8.930000305175781,
+      "resistance": 12.883437960051115,
+      "growth": 0.643,
+      "relative_strength": 16.565923126126357,
+      "fcf": [
+        1100000000.0,
+        -11456000000.0,
+        -15316000000.0
+      ],
+      "institutional_percent": 0.21195,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +16.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 41.50966080771091,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/SBSW/",
+        "analysis_source": "https://finance.yahoo.com/quote/SBSW/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/SBSW/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/SBSW/financials/"
+      },
+      "indicators": {
+        "pe": 7.785714,
+        "forward_pe": 3.7484946,
+        "peg": null,
+        "eps": 1.19,
+        "forward_eps": 2.471659,
+        "price_to_book": 3.9996948,
+        "market_cap": 6702026240.0,
+        "profit_margin": 0.09804,
+        "operating_margin": 0.29948,
+        "roe": 0.34726003,
+        "debt_to_equity": 63.104,
+        "current_ratio": 2.72,
+        "earnings_growth": null,
+        "dividend_yield": 8.79,
+        "beta": 0.924,
+        "price_to_sales": 0.040646177
+      },
+      "analyst_count": 5
+    },
+    {
+      "ticker": "IAG",
+      "name": "Iamgold Corporation",
+      "price": 16.270000457763672,
+      "rating": "Buy",
+      "target": 22.78571,
+      "support": 15.970000267028809,
+      "resistance": 22.31999969482422,
+      "growth": 0.475,
+      "relative_strength": 15.324227199941209,
+      "fcf": [
+        841000000.0,
+        -73100000.0,
+        -749000000.0
+      ],
+      "institutional_percent": 0.76045996,
+      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +15.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 34.00269468699962,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/IAG/",
+        "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/IAG/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/IAG/financials/"
+      },
+      "indicators": {
+        "pe": 8.217172,
+        "forward_pe": 7.3748384,
+        "peg": null,
+        "eps": 1.98,
+        "forward_eps": 2.20615,
+        "price_to_book": 2.1242983,
+        "market_cap": 9290170368.0,
+        "profit_margin": 0.31403,
+        "operating_margin": 0.44976002,
+        "roe": 0.32329,
+        "debt_to_equity": 12.152,
+        "current_ratio": 1.712,
+        "earnings_growth": 1.914,
+        "dividend_yield": 0.0,
+        "beta": 2.353,
+        "price_to_sales": 2.5232687
+      },
+      "analyst_count": 7
+    },
+    {
+      "ticker": "BTG",
+      "name": "B2Gold Corp",
+      "price": 4.815000057220459,
+      "rating": "Buy",
+      "target": 6.35,
+      "support": 4.690000057220459,
+      "resistance": 5.8787001930387675,
+      "growth": 0.14,
+      "relative_strength": 27.07379839494827,
+      "fcf": [
+        895836000.0,
+        877604000.0,
+        638085000.0
+      ],
+      "institutional_percent": 0.69738996,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +27.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 23.939691896412086,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/BTG/",
+        "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/BTG/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/BTG/financials/"
+      },
+      "indicators": {
+        "pe": 8.754545,
+        "forward_pe": 5.4050717,
+        "peg": null,
+        "eps": 0.55,
+        "forward_eps": 0.89083,
+        "price_to_book": 1.6012638,
+        "market_cap": 6360955392.0,
+        "profit_margin": 0.21326,
+        "operating_margin": 0.45736,
+        "roe": 0.22635001,
+        "debt_to_equity": 11.389,
+        "current_ratio": 1.581,
+        "earnings_growth": 1.854,
+        "dividend_yield": 1.67,
+        "beta": 1.411,
+        "price_to_sales": 1.6805989
+      },
+      "analyst_count": 5
+    },
+    {
+      "ticker": "LYFT",
+      "name": "Lyft, Inc.",
+      "price": 16.80500030517578,
+      "rating": "Buy",
+      "target": 19.30486,
+      "support": 14.444999694824219,
+      "resistance": 17.979999542236328,
+      "growth": 0.161,
+      "relative_strength": 0.11590256661548892,
+      "fcf": [
+        1115616000.0,
+        766267000.0,
+        -248063000.0
+      ],
+      "institutional_percent": 1.11719,
+      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 16.1% and 3-month benchmark-relative strength +0.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 10.13827280000043,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/LYFT/",
+        "analysis_source": "https://finance.yahoo.com/quote/LYFT/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/LYFT/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/LYFT/financials/"
+      },
+      "indicators": {
+        "pe": 2.4454148,
+        "forward_pe": 7.784445,
+        "peg": null,
+        "eps": 6.87,
+        "forward_eps": 2.15815,
+        "price_to_book": 2.106847,
+        "market_cap": 6359476224.0,
+        "profit_margin": 0.42317,
+        "operating_margin": 0.025799999,
+        "roe": 1.52579,
+        "debt_to_equity": 42.738,
+        "current_ratio": 0.586,
+        "earnings_growth": 0.345,
+        "dividend_yield": 0.0,
+        "beta": 1.96,
+        "price_to_sales": 0.9390924
+      },
+      "analyst_count": 37
+    }
+  ],
+  "errors": [
+    {
+      "ticker": true,
+      "error": "Data unavailable for fundamentals_True: 'bool' object has no attribute 'upper'"
+    }
+  ]
+}
