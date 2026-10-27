@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-10-27T15:56:42+00:00",
+  "generated_utc": "2026-10-27T16:10:50+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "SBSW",
       "name": "D/B/A Sibanye-Stillwater Limite",
-      "price": 9.395000457763672,
+      "price": 9.364999771118164,
       "rating": "Buy",
-      "target": 13.292961,
+      "target": 13.287119,
       "support": 8.930000305175781,
       "resistance": 12.883437960051115,
       "growth": 0.643,
-      "relative_strength": 14.014435428617267,
+      "relative_strength": 13.755182591323269,
       "fcf": [
         1100000000.0,
         -11456000000.0,
         -15316000000.0
       ],
       "institutional_percent": 0.21195,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +14.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 39.85697209872197,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +13.8 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 39.883497542005166,
       "links": {
         "source": "https://finance.yahoo.com/quote/SBSW/",
         "analysis_source": "https://finance.yahoo.com/quote/SBSW/analysis/",
@@ -27,13 +27,13 @@
         "financials_source": "https://finance.yahoo.com/quote/SBSW/financials/"
       },
       "indicators": {
-        "pe": 7.894958,
-        "forward_pe": 3.801091,
+        "pe": 7.869747,
+        "forward_pe": 3.788953,
         "peg": null,
         "eps": 1.19,
         "forward_eps": 2.471659,
-        "price_to_book": 4.0558157,
-        "market_cap": 6796064256.0,
+        "price_to_book": 4.042865,
+        "market_cap": 6774362624.0,
         "profit_margin": 0.09804,
         "operating_margin": 0.29948,
         "roe": 0.34726003,
@@ -42,28 +42,28 @@
         "earnings_growth": null,
         "dividend_yield": 8.69,
         "beta": 0.924,
-        "price_to_sales": 0.041216493
+        "price_to_sales": 0.04108488
       },
       "analyst_count": 5
     },
     {
       "ticker": "IAG",
       "name": "Iamgold Corporation",
-      "price": 16.912399291992188,
+      "price": 16.809999465942383,
       "rating": "Buy",
       "target": 22.78571,
       "support": 15.869999885559082,
       "resistance": 22.31999969482422,
       "growth": 0.475,
-      "relative_strength": 20.794375823594983,
+      "relative_strength": 20.16606351197674,
       "fcf": [
         841000000.0,
         -73100000.0,
         -749000000.0
       ],
       "institutional_percent": 0.76071,
-      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +20.8 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 34.32138308011562,
+      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +20.2 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 34.34768628137629,
       "links": {
         "source": "https://finance.yahoo.com/quote/IAG/",
         "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
@@ -71,13 +71,13 @@
         "financials_source": "https://finance.yahoo.com/quote/IAG/financials/"
       },
       "indicators": {
-        "pe": 9.292527,
-        "forward_pe": 7.6991076,
+        "pe": 9.236263,
+        "forward_pe": 7.6524916,
         "peg": null,
         "eps": 1.82,
         "forward_eps": 2.19667,
-        "price_to_book": 2.2081733,
-        "market_cap": 9656980480.0,
+        "price_to_book": 2.1948035,
+        "market_cap": 9598510080.0,
         "profit_margin": 0.31403,
         "operating_margin": 0.44976002,
         "roe": 0.32329,
@@ -86,28 +86,28 @@
         "earnings_growth": 1.914,
         "dividend_yield": 0.0,
         "beta": 2.353,
-        "price_to_sales": 2.6228967
+        "price_to_sales": 2.6070156
       },
       "analyst_count": 7
     },
     {
       "ticker": "HL",
       "name": "Hecla Mining Company",
-      "price": 14.48169994354248,
+      "price": 14.444999694824219,
       "rating": "Buy",
       "target": 21.875,
       "support": 13.5,
       "resistance": 21.690000534057617,
       "growth": 0.524,
-      "relative_strength": 1.7482214899698922,
+      "relative_strength": 1.5955966811390887,
       "fcf": [
         310249000.0,
         3785000.0,
         -148388000.0
       ],
       "institutional_percent": 0.76773,
-      "reason": "Public analyst consensus: buy, 10 analysts; revenue growth 52.4% and 3-month benchmark-relative strength +1.7 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 34.26769006824974,
+      "reason": "Public analyst consensus: buy, 10 analysts; revenue growth 52.4% and 3-month benchmark-relative strength +1.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 34.329404761861774,
       "links": {
         "source": "https://finance.yahoo.com/quote/HL/",
         "analysis_source": "https://finance.yahoo.com/quote/HL/analysis/",
@@ -115,13 +115,13 @@
         "financials_source": "https://finance.yahoo.com/quote/HL/financials/"
       },
       "indicators": {
-        "pe": 18.566282,
-        "forward_pe": 15.226104,
+        "pe": 18.519232,
+        "forward_pe": 15.187517,
         "peg": null,
         "eps": 0.78,
         "forward_eps": 0.95111,
-        "price_to_book": 3.633141,
-        "market_cap": 9728349184.0,
+        "price_to_book": 3.6239336,
+        "market_cap": 9703695360.0,
         "profit_margin": 0.19150999,
         "operating_margin": 0.4427,
         "roe": 0.22173999,
@@ -130,28 +130,28 @@
         "earnings_growth": 0.929,
         "dividend_yield": 0.11,
         "beta": 1.373,
-        "price_to_sales": 5.5782557
+        "price_to_sales": 5.564119
       },
       "analyst_count": 10
     },
     {
       "ticker": "BTG",
       "name": "B2Gold Corp",
-      "price": 4.965000152587891,
+      "price": 4.932000160217285,
       "rating": "Buy",
       "target": 6.35,
       "support": 4.659999847412109,
       "resistance": 5.8787001930387675,
       "growth": 0.14,
-      "relative_strength": 32.6194869019071,
+      "relative_strength": 31.840727733787837,
       "fcf": [
         895836000.0,
         877604000.0,
         638085000.0
       ],
       "institutional_percent": 0.69736,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +32.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 24.685399296920153,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +31.8 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 24.66955758832591,
       "links": {
         "source": "https://finance.yahoo.com/quote/BTG/",
         "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
@@ -159,13 +159,13 @@
         "financials_source": "https://finance.yahoo.com/quote/BTG/financials/"
       },
       "indicators": {
-        "pe": 9.027273,
-        "forward_pe": 5.5734544,
+        "pe": 8.967273,
+        "forward_pe": 5.5364103,
         "peg": null,
         "eps": 0.55,
         "forward_eps": 0.89083,
-        "price_to_book": 1.6511474,
-        "market_cap": 6559116288.0,
+        "price_to_book": 1.640173,
+        "market_cap": 6515521024.0,
         "profit_margin": 0.21326,
         "operating_margin": 0.45736,
         "roe": 0.22635001,
@@ -174,7 +174,7 @@
         "earnings_growth": 1.854,
         "dividend_yield": 1.66,
         "beta": 1.411,
-        "price_to_sales": 1.732954
+        "price_to_sales": 1.7214359
       },
       "analyst_count": 5
     }
