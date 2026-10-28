@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-10-28T16:42:32+00:00",
+  "generated_utc": "2026-10-28T16:58:42+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "SBSW",
       "name": "D/B/A Sibanye-Stillwater Limite",
-      "price": 9.28499984741211,
+      "price": 9.3149995803833,
       "rating": "Buy",
-      "target": 13.239581,
+      "target": 13.245437,
       "support": 8.930000305175781,
       "resistance": 12.883437960051115,
       "growth": 0.643,
-      "relative_strength": 6.107385287350575,
+      "relative_strength": 6.403034701770061,
       "fcf": [
         1100000000.0,
         -11456000000.0,
         -15316000000.0
       ],
       "institutional_percent": 0.20969,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +6.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 37.419907039835095,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 64.3% and 3-month benchmark-relative strength +6.4 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 37.40447630559622,
       "links": {
         "source": "https://finance.yahoo.com/quote/SBSW/",
         "analysis_source": "https://finance.yahoo.com/quote/SBSW/analysis/",
@@ -27,13 +27,13 @@
         "financials_source": "https://finance.yahoo.com/quote/SBSW/financials/"
       },
       "indicators": {
-        "pe": 7.8025203,
-        "forward_pe": 3.756586,
+        "pe": 7.82773,
+        "forward_pe": 3.7687237,
         "peg": null,
         "eps": 1.19,
         "forward_eps": 2.471659,
-        "price_to_book": 4.008329,
-        "market_cap": 6716493312.0,
+        "price_to_book": 4.0212793,
+        "market_cap": 6738193920.0,
         "profit_margin": 0.09804,
         "operating_margin": 0.29948,
         "roe": 0.34726003,
@@ -42,28 +42,28 @@
         "earnings_growth": null,
         "dividend_yield": 8.69,
         "beta": 0.924,
-        "price_to_sales": 0.040733915
+        "price_to_sales": 0.040865526
       },
       "analyst_count": 5
     },
     {
       "ticker": "IAG",
       "name": "Iamgold Corporation",
-      "price": 16.979999542236328,
+      "price": 17.03499984741211,
       "rating": "Buy",
       "target": 22.78571,
       "support": 15.869999885559082,
       "resistance": 22.31999969482422,
       "growth": 0.475,
-      "relative_strength": 16.170404849570218,
+      "relative_strength": 16.49951634388107,
       "fcf": [
         841000000.0,
         -73100000.0,
         -749000000.0
       ],
       "institutional_percent": 0.761,
-      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +16.2 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 32.5420809451937,
+      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +16.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 32.52729218927324,
       "links": {
         "source": "https://finance.yahoo.com/quote/IAG/",
         "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
@@ -71,13 +71,13 @@
         "financials_source": "https://finance.yahoo.com/quote/IAG/financials/"
       },
       "indicators": {
-        "pe": 8.575757,
-        "forward_pe": 7.704034,
+        "pe": 8.603536,
+        "forward_pe": 7.728988,
         "peg": null,
         "eps": 1.98,
         "forward_eps": 2.20404,
-        "price_to_book": 2.2169995,
-        "market_cap": 9695580160.0,
+        "price_to_book": 2.2241807,
+        "market_cap": 9726985216.0,
         "profit_margin": 0.31403,
         "operating_margin": 0.44976002,
         "roe": 0.32329,
@@ -86,28 +86,28 @@
         "earnings_growth": 1.914,
         "dividend_yield": 0.0,
         "beta": 2.353,
-        "price_to_sales": 2.6333804
+        "price_to_sales": 2.6419103
       },
       "analyst_count": 7
     },
     {
       "ticker": "BTG",
       "name": "B2Gold Corp",
-      "price": 4.954999923706055,
+      "price": 4.974999904632568,
       "rating": "Buy",
       "target": 6.35,
       "support": 4.659999847412109,
       "resistance": 5.8787001930387675,
       "growth": 0.14,
-      "relative_strength": 28.717146966328656,
+      "relative_strength": 29.18987135705042,
       "fcf": [
         895836000.0,
         877604000.0,
         638085000.0
       ],
       "institutional_percent": 0.69813,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +28.7 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 23.39701615732666,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +29.2 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 23.40791299542152,
       "links": {
         "source": "https://finance.yahoo.com/quote/BTG/",
         "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
@@ -115,13 +115,13 @@
         "financials_source": "https://finance.yahoo.com/quote/BTG/financials/"
       },
       "indicators": {
-        "pe": 9.00909,
-        "forward_pe": 5.5622287,
+        "pe": 9.045454,
+        "forward_pe": 5.5846796,
         "peg": null,
         "eps": 0.55,
         "forward_eps": 0.89083,
-        "price_to_book": 1.6478218,
-        "market_cap": 6545905152.0,
+        "price_to_book": 1.6544728,
+        "market_cap": 6572326912.0,
         "profit_margin": 0.21326,
         "operating_margin": 0.45736,
         "roe": 0.22635001,
@@ -130,7 +130,7 @@
         "earnings_growth": 1.854,
         "dividend_yield": 1.61,
         "beta": 1.411,
-        "price_to_sales": 1.7294636
+        "price_to_sales": 1.7364444
       },
       "analyst_count": 5
     }
