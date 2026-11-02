@@ -1,0 +1,144 @@
+{
+  "generated_utc": "2026-11-02T20:50:46+00:00",
+  "scanned": 112,
+  "matches": [
+    {
+      "ticker": "IAG",
+      "name": "Iamgold Corporation",
+      "price": 16.0,
+      "rating": "Buy",
+      "target": 22.78571,
+      "support": 15.130000114440918,
+      "resistance": 22.31999969482422,
+      "growth": 0.475,
+      "relative_strength": 4.315333709429914,
+      "fcf": [
+        841000000.0,
+        -73100000.0,
+        -749000000.0
+      ],
+      "institutional_percent": 0.76066,
+      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 47.5% and 3-month benchmark-relative strength +4.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 30.858573048300475,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/IAG/",
+        "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/IAG/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/IAG/financials/"
+      },
+      "indicators": {
+        "pe": 8.080808,
+        "forward_pe": 7.259396,
+        "peg": null,
+        "eps": 1.98,
+        "forward_eps": 2.20404,
+        "price_to_book": 2.0890455,
+        "market_cap": 9136000000.0,
+        "profit_margin": 0.31403,
+        "operating_margin": 0.44976002,
+        "roe": 0.32329,
+        "debt_to_equity": 12.152,
+        "current_ratio": 1.712,
+        "earnings_growth": 1.914,
+        "dividend_yield": 0.0,
+        "beta": 2.387,
+        "price_to_sales": 2.481395
+      },
+      "analyst_count": 7
+    },
+    {
+      "ticker": "BTG",
+      "name": "B2Gold Corp",
+      "price": 4.795000076293945,
+      "rating": "Buy",
+      "target": 6.35,
+      "support": 4.510000228881836,
+      "resistance": 5.8787001930387675,
+      "growth": 0.14,
+      "relative_strength": 19.918618947084486,
+      "fcf": [
+        895836000.0,
+        877604000.0,
+        638085000.0
+      ],
+      "institutional_percent": 0.69883,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +19.9 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 21.600400253779195,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/BTG/",
+        "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/BTG/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/BTG/financials/"
+      },
+      "indicators": {
+        "pe": 8.718182,
+        "forward_pe": 5.460156,
+        "peg": null,
+        "eps": 0.55,
+        "forward_eps": 0.87818,
+        "price_to_book": 1.5946126,
+        "market_cap": 6334534144.0,
+        "profit_margin": 0.21326,
+        "operating_margin": 0.45736,
+        "roe": 0.22635001,
+        "debt_to_equity": 11.389,
+        "current_ratio": 1.581,
+        "earnings_growth": 1.854,
+        "dividend_yield": 1.74,
+        "beta": 1.358,
+        "price_to_sales": 1.6736182
+      },
+      "analyst_count": 5
+    },
+    {
+      "ticker": "LYFT",
+      "name": "Lyft, Inc.",
+      "price": 16.5049991607666,
+      "rating": "Buy",
+      "target": 19.30486,
+      "support": 15.399999618530273,
+      "resistance": 17.979999542236328,
+      "growth": 0.161,
+      "relative_strength": 5.111076152077276,
+      "fcf": [
+        1115616000.0,
+        766267000.0,
+        -248063000.0
+      ],
+      "institutional_percent": 1.1193299,
+      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 16.1% and 3-month benchmark-relative strength +5.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 12.512990827595818,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/LYFT/",
+        "analysis_source": "https://finance.yahoo.com/quote/LYFT/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/LYFT/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/LYFT/financials/"
+      },
+      "indicators": {
+        "pe": 2.4024744,
+        "forward_pe": 7.623556,
+        "peg": null,
+        "eps": 6.87,
+        "forward_eps": 2.165,
+        "price_to_book": 2.0698519,
+        "market_cap": 6247806464.0,
+        "profit_margin": 0.42317,
+        "operating_margin": 0.025799999,
+        "roe": 1.52579,
+        "debt_to_equity": 42.738,
+        "current_ratio": 0.586,
+        "earnings_growth": 0.345,
+        "dividend_yield": 0.0,
+        "beta": 2.058,
+        "price_to_sales": 0.9226023
+      },
+      "analyst_count": 37
+    }
+  ],
+  "errors": [
+    {
+      "ticker": true,
+      "error": "Data unavailable for fundamentals_True: 'bool' object has no attribute 'upper'"
+    }
+  ]
+}
