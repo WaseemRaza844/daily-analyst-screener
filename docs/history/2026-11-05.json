@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-11-05T18:49:05+00:00",
+  "generated_utc": "2026-11-05T19:19:51+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "DLO",
       "name": "DLocal Limited",
-      "price": 13.449999809265137,
+      "price": 13.510000228881836,
       "rating": "Strong Buy",
       "target": 18.6,
       "support": 12.869999885559082,
       "resistance": 16.149999618530273,
       "growth": 0.558,
-      "relative_strength": 6.318843277553809,
+      "relative_strength": 5.904481379902528,
       "fcf": [
         378672000.0,
         -55431000.0,
         275228000.0
       ],
       "institutional_percent": 0.73371005,
-      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +6.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 33.22858458305575,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +5.9 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 32.89930649529405,
       "links": {
         "source": "https://finance.yahoo.com/quote/DLO/",
         "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
@@ -27,13 +27,13 @@
         "financials_source": "https://finance.yahoo.com/quote/DLO/financials/"
       },
       "indicators": {
-        "pe": 19.779411,
-        "forward_pe": 11.916046,
+        "pe": 19.867647,
+        "forward_pe": 11.969204,
         "peg": null,
         "eps": 0.68,
         "forward_eps": 1.12873,
-        "price_to_book": 7.180993,
-        "market_cap": 3853020672.0,
+        "price_to_book": 7.2130275,
+        "market_cap": 3870209024.0,
         "profit_margin": 0.15043001,
         "operating_margin": 0.16054001,
         "roe": 0.41294,
@@ -42,28 +42,28 @@
         "earnings_growth": 0.286,
         "dividend_yield": 1.4,
         "beta": 0.873,
-        "price_to_sales": 2.8416784
+        "price_to_sales": 2.8543553
       },
       "analyst_count": 10
     },
     {
       "ticker": "BTG",
       "name": "B2Gold Corp",
-      "price": 5.276100158691406,
+      "price": 5.25,
       "rating": "Buy",
       "target": 6.35,
       "support": 4.510000228881836,
       "resistance": 5.8787001930387675,
       "growth": 0.14,
-      "relative_strength": 6.0668203923120885,
+      "relative_strength": 5.317993099219498,
       "fcf": [
         895836000.0,
         877604000.0,
         638085000.0
       ],
       "institutional_percent": 0.70365,
-      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +6.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 13.129600869091071,
+      "reason": "Public analyst consensus: buy, 5 analysts; revenue growth 14.0% and 3-month benchmark-relative strength +5.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 13.047011870441107,
       "links": {
         "source": "https://finance.yahoo.com/quote/BTG/",
         "analysis_source": "https://finance.yahoo.com/quote/BTG/analysis/",
@@ -71,13 +71,13 @@
         "financials_source": "https://finance.yahoo.com/quote/BTG/financials/"
       },
       "indicators": {
-        "pe": 9.592909,
-        "forward_pe": 6.0079937,
+        "pe": 9.545454,
+        "forward_pe": 5.978273,
         "peg": null,
         "eps": 0.55,
         "forward_eps": 0.87818,
-        "price_to_book": 1.9679598,
-        "market_cap": 6970101248.0,
+        "price_to_book": 1.9582245,
+        "market_cap": 6935621120.0,
         "profit_margin": 0.21326,
         "operating_margin": 0.45736,
         "roe": 0.22635001,
@@ -86,7 +86,7 @@
         "earnings_growth": 1.854,
         "dividend_yield": 1.57,
         "beta": 1.358,
-        "price_to_sales": 1.8415384
+        "price_to_sales": 1.8324286
       },
       "analyst_count": 5
     }
