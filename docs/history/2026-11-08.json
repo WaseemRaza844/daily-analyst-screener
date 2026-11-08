@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-08T17:07:41+00:00",
+  "generated_utc": "2026-11-08T17:29:49+00:00",
   "scanned": 112,
   "matches": [
     {
@@ -116,10 +116,10 @@
       },
       "indicators": {
         "pe": 2.5356085,
-        "forward_pe": 8.223541,
+        "forward_pe": 7.8937645,
         "peg": null,
         "eps": 6.74,
-        "forward_eps": 2.07818,
+        "forward_eps": 2.165,
         "price_to_book": 2.1740236,
         "market_cap": 6458247168.0,
         "profit_margin": 0.40672,
