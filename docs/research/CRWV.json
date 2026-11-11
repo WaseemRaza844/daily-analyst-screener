@@ -1,13 +1,13 @@
 {
   "ticker": "CRWV",
-  "generated_utc": "2026-11-10T19:11:14.311955+00:00",
+  "generated_utc": "2026-11-11T18:45:20.055168+00:00",
   "name": "CoreWeave, Inc.",
-  "price": 48.03499984741211,
-  "price_date": "2026-11-10",
+  "price": 61.84000015258789,
+  "price_date": "2026-11-11",
   "rating": "buy",
   "analyst_count": 38.0,
   "target": 131.52632,
-  "growth": 1.125,
+  "growth": 1.683,
   "fcf": [
     -7251000000.0,
     -5953000000.0,
@@ -15,20 +15,20 @@
   ],
   "indicators": {
     "pe": null,
-    "forward_pe": -23.664194,
+    "forward_pe": -32.503918,
     "peg": null,
     "eps": -3.69,
-    "forward_eps": -2.02986,
-    "price_to_book": 5.268151,
-    "market_cap": 26493059072.0,
-    "profit_margin": -0.25402,
-    "operating_margin": -0.01903,
-    "roe": -0.43596,
-    "debt_to_equity": 1027.329,
-    "current_ratio": 0.455,
+    "forward_eps": -1.90254,
+    "price_to_book": 8.588889,
+    "market_cap": 34107021312.0,
+    "profit_margin": -0.25561002,
+    "operating_margin": -0.00475,
+    "roe": -0.6395,
+    "debt_to_equity": 1645.193,
+    "current_ratio": 0.443,
     "earnings_growth": null,
     "dividend_yield": 0.0,
     "beta": null,
-    "price_to_sales": 3.4905217
+    "price_to_sales": 3.4500325
   }
 }
