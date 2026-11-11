@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-11-11T18:45:18+00:00",
+  "generated_utc": "2026-11-11T19:08:11+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "DLO",
       "name": "DLocal Limited",
-      "price": 13.970000267028809,
+      "price": 13.994999885559082,
       "rating": "Strong Buy",
       "target": 18.5,
       "support": 12.869999885559082,
       "resistance": 16.149999618530273,
       "growth": 0.558,
-      "relative_strength": 2.035684867479681,
+      "relative_strength": 2.5251892139803394,
       "fcf": [
         378672000.0,
         -55431000.0,
         275228000.0
       ],
       "institutional_percent": 0.72116995,
-      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +2.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 29.970477491125596,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +2.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 30.070836913595215,
       "links": {
         "source": "https://finance.yahoo.com/quote/DLO/",
         "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
@@ -27,13 +27,13 @@
         "financials_source": "https://finance.yahoo.com/quote/DLO/financials/"
       },
       "indicators": {
-        "pe": 20.544117,
-        "forward_pe": 12.376741,
+        "pe": 20.580881,
+        "forward_pe": 12.3988905,
         "peg": null,
         "eps": 0.68,
         "forward_eps": 1.12873,
-        "price_to_book": 7.4586225,
-        "market_cap": 4001985280.0,
+        "price_to_book": 7.47197,
+        "market_cap": 4009146880.0,
         "profit_margin": 0.15043001,
         "operating_margin": 0.17349,
         "roe": 0.41294,
@@ -42,28 +42,28 @@
         "earnings_growth": 0.286,
         "dividend_yield": 1.39,
         "beta": 0.873,
-        "price_to_sales": 2.9515429
+        "price_to_sales": 2.9568245
       },
       "analyst_count": 10
     },
     {
       "ticker": "IAG",
       "name": "Iamgold Corporation",
-      "price": 18.405000686645508,
+      "price": 18.315000534057617,
       "rating": "Buy",
       "target": 22.92857,
       "support": 15.130000114440918,
       "resistance": 22.31999969482422,
       "growth": 0.212,
-      "relative_strength": 1.9720340937830372,
+      "relative_strength": 1.4841925358425323,
       "fcf": [
         841000000.0,
         -73100000.0,
         -749000000.0
       ],
       "institutional_percent": 0.76235,
-      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 21.2% and 3-month benchmark-relative strength +2.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 15.483592771603522,
+      "reason": "Public analyst consensus: buy, 7 analysts; revenue growth 21.2% and 3-month benchmark-relative strength +1.5 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 15.496501509432946,
       "links": {
         "source": "https://finance.yahoo.com/quote/IAG/",
         "analysis_source": "https://finance.yahoo.com/quote/IAG/analysis/",
@@ -71,13 +71,13 @@
         "financials_source": "https://finance.yahoo.com/quote/IAG/financials/"
       },
       "indicators": {
-        "pe": 8.18,
-        "forward_pe": 8.272617,
+        "pe": 8.14,
+        "forward_pe": 8.232164,
         "peg": null,
         "eps": 2.25,
         "forward_eps": 2.22481,
-        "price_to_book": 2.2582824,
-        "market_cap": 10430114816.0,
+        "price_to_book": 2.2472394,
+        "market_cap": 10379111424.0,
         "profit_margin": 0.34289002,
         "operating_margin": 0.49272,
         "roe": 0.34907,
@@ -86,28 +86,28 @@
         "earnings_growth": 1.167,
         "dividend_yield": 0.0,
         "beta": 2.387,
-        "price_to_sales": 2.7221303
+        "price_to_sales": 2.7088192
       },
       "analyst_count": 7
     },
     {
       "ticker": "LYFT",
       "name": "Lyft, Inc.",
-      "price": 17.405000686645508,
+      "price": 17.385000228881836,
       "rating": "Buy",
       "target": 19.37243,
       "support": 15.8100004196167,
       "resistance": 18.84000015258789,
       "growth": 0.081,
-      "relative_strength": 8.993367730048472,
+      "relative_strength": 9.196741059538505,
       "fcf": [
         1115616000.0,
         766267000.0,
         -248063000.0
       ],
       "institutional_percent": 1.12859,
-      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 8.1% and 3-month benchmark-relative strength +9.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 9.373823610551176,
+      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 8.1% and 3-month benchmark-relative strength +9.2 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 9.483418896209834,
       "links": {
         "source": "https://finance.yahoo.com/quote/LYFT/",
         "analysis_source": "https://finance.yahoo.com/quote/LYFT/analysis/",
@@ -115,13 +115,13 @@
         "financials_source": "https://finance.yahoo.com/quote/LYFT/financials/"
       },
       "indicators": {
-        "pe": 2.5823443,
-        "forward_pe": 8.227565,
+        "pe": 2.579377,
+        "forward_pe": 8.692152,
         "peg": null,
         "eps": 6.74,
-        "forward_eps": 2.11545,
-        "price_to_book": 2.2140949,
-        "market_cap": 6577284608.0,
+        "forward_eps": 2.00008,
+        "price_to_book": 2.2115507,
+        "market_cap": 6569726464.0,
         "profit_margin": 0.40672,
         "operating_margin": -0.02059,
         "roe": 1.5812801,
@@ -130,7 +130,7 @@
         "earnings_growth": null,
         "dividend_yield": 0.0,
         "beta": 2.058,
-        "price_to_sales": 0.9520477
+        "price_to_sales": 0.9509537
       },
       "analyst_count": 37
     }
