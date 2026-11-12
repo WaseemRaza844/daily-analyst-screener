@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-11-12T19:00:02+00:00",
+  "generated_utc": "2026-11-12T19:26:09+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "DLO",
       "name": "DLocal Limited",
-      "price": 13.739999771118164,
+      "price": 13.725000381469727,
       "rating": "Strong Buy",
       "target": 18.5,
       "support": 12.869999885559082,
       "resistance": 16.149999618530273,
       "growth": 0.558,
-      "relative_strength": 5.384534051234658,
+      "relative_strength": 5.2944873390071585,
       "fcf": [
         378672000.0,
         -55431000.0,
         275228000.0
       ],
       "institutional_percent": 0.72193,
-      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +5.4 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 31.807600691238324,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 55.8% and 3-month benchmark-relative strength +5.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 31.820227914696126,
       "links": {
         "source": "https://finance.yahoo.com/quote/DLO/",
         "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
@@ -27,13 +27,13 @@
         "financials_source": "https://finance.yahoo.com/quote/DLO/financials/"
       },
       "indicators": {
-        "pe": 20.205881,
-        "forward_pe": 12.172973,
+        "pe": 20.183825,
+        "forward_pe": 12.159683,
         "peg": null,
         "eps": 0.68,
         "forward_eps": 1.12873,
-        "price_to_book": 7.3358245,
-        "market_cap": 3936097024.0,
+        "price_to_book": 7.3278165,
+        "market_cap": 3931800320.0,
         "profit_margin": 0.15043001,
         "operating_margin": 0.17349,
         "roe": 0.41294,
@@ -42,28 +42,28 @@
         "earnings_growth": 0.286,
         "dividend_yield": 1.39,
         "beta": 0.873,
-        "price_to_sales": 2.9029489
+        "price_to_sales": 2.89978
       },
       "analyst_count": 10
     },
     {
       "ticker": "LYFT",
       "name": "Lyft, Inc.",
-      "price": 16.989999771118164,
+      "price": 16.940000534057617,
       "rating": "Buy",
       "target": 19.37243,
       "support": 15.8100004196167,
       "resistance": 18.84000015258789,
       "growth": 0.081,
-      "relative_strength": 5.615913862026989,
+      "relative_strength": 5.345683454406203,
       "fcf": [
         1115616000.0,
         766267000.0,
         -248063000.0
       ],
       "institutional_percent": 1.1311799,
-      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 8.1% and 3-month benchmark-relative strength +5.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 9.007333114176006,
+      "reason": "Public analyst consensus: buy, 37 analysts; revenue growth 8.1% and 3-month benchmark-relative strength +5.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 9.013715400169533,
       "links": {
         "source": "https://finance.yahoo.com/quote/LYFT/",
         "analysis_source": "https://finance.yahoo.com/quote/LYFT/analysis/",
@@ -71,13 +71,13 @@
         "financials_source": "https://finance.yahoo.com/quote/LYFT/financials/"
       },
       "indicators": {
-        "pe": 2.5207715,
-        "forward_pe": 8.122113,
+        "pe": 2.514837,
+        "forward_pe": 8.102992,
         "peg": null,
         "eps": 6.74,
         "forward_eps": 2.09182,
-        "price_to_book": 2.1613026,
-        "market_cap": 6420457472.0,
+        "price_to_book": 2.1562142,
+        "market_cap": 6405341696.0,
         "profit_margin": 0.40672,
         "operating_margin": -0.02059,
         "roe": 1.5812801,
@@ -86,7 +86,7 @@
         "earnings_growth": null,
         "dividend_yield": 0.0,
         "beta": 2.058,
-        "price_to_sales": 0.92934734
+        "price_to_sales": 0.92715937
       },
       "analyst_count": 37
     }
