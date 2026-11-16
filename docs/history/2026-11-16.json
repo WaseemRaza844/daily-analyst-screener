@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-16T21:06:04+00:00",
+  "generated_utc": "2026-11-16T21:31:30+00:00",
   "scanned": 112,
   "matches": [
     {
@@ -11,15 +11,15 @@
       "support": 12.869999885559082,
       "resistance": 16.149999618530273,
       "growth": 0.409,
-      "relative_strength": 8.961973581290094,
+      "relative_strength": 8.935011976393147,
       "fcf": [
         378672000.0,
         -55431000.0,
         275228000.0
       ],
       "institutional_percent": 0.68228996,
-      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 40.9% and 3-month benchmark-relative strength +9.0 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 29.05588817861669,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 40.9% and 3-month benchmark-relative strength +8.9 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 29.04645161690276,
       "links": {
         "source": "https://finance.yahoo.com/quote/DLO/",
         "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
