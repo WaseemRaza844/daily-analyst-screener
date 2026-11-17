@@ -1,0 +1,11 @@
+{
+  "generated_utc": "2026-11-17T19:54:56+00:00",
+  "scanned": 112,
+  "matches": [],
+  "errors": [
+    {
+      "ticker": true,
+      "error": "Data unavailable for fundamentals_True: 'bool' object has no attribute 'upper'"
+    }
+  ]
+}
