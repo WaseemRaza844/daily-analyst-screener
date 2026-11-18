@@ -1,0 +1,56 @@
+{
+  "generated_utc": "2026-11-18T19:27:07+00:00",
+  "scanned": 112,
+  "matches": [
+    {
+      "ticker": "DLO",
+      "name": "DLocal Limited",
+      "price": 12.845000267028809,
+      "rating": "Strong Buy",
+      "target": 18.4,
+      "support": 12.3100004196167,
+      "resistance": 16.149999618530273,
+      "growth": 0.409,
+      "relative_strength": 0.09839766881880685,
+      "fcf": [
+        378672000.0,
+        -55431000.0,
+        275228000.0
+      ],
+      "institutional_percent": 0.68886,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 40.9% and 3-month benchmark-relative strength +0.1 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 27.323358103878377,
+      "links": {
+        "source": "https://finance.yahoo.com/quote/DLO/",
+        "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
+        "cash_source": "https://finance.yahoo.com/quote/DLO/cash-flow/",
+        "financials_source": "https://finance.yahoo.com/quote/DLO/financials/"
+      },
+      "indicators": {
+        "pe": 17.358109,
+        "forward_pe": 11.405308,
+        "peg": null,
+        "eps": 0.74,
+        "forward_eps": 1.12623,
+        "price_to_book": 6.4032903,
+        "market_cap": 3679706624.0,
+        "profit_margin": 0.14949,
+        "operating_margin": 0.17385,
+        "roe": 0.4074,
+        "debt_to_equity": 28.981,
+        "current_ratio": 1.326,
+        "earnings_growth": 0.353,
+        "dividend_yield": 1.56,
+        "beta": 0.873,
+        "price_to_sales": 2.5007145
+      },
+      "analyst_count": 10
+    }
+  ],
+  "errors": [
+    {
+      "ticker": true,
+      "error": "Data unavailable for fundamentals_True: 'bool' object has no attribute 'upper'"
+    }
+  ]
+}
