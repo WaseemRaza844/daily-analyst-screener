@@ -1,25 +1,25 @@
 {
-  "generated_utc": "2026-11-25T20:31:52+00:00",
+  "generated_utc": "2026-11-25T20:57:26+00:00",
   "scanned": 112,
   "matches": [
     {
       "ticker": "DLO",
       "name": "DLocal Limited",
-      "price": 12.510000228881836,
+      "price": 12.585000038146973,
       "rating": "Strong Buy",
       "target": 18.5,
       "support": 11.979999542236328,
       "resistance": 16.149999618530273,
       "growth": 0.409,
-      "relative_strength": 0.3102685550663047,
+      "relative_strength": 0.6357877229725588,
       "fcf": [
         378672000.0,
         -55431000.0,
         275228000.0
       ],
       "institutional_percent": 0.61841,
-      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 40.9% and 3-month benchmark-relative strength +0.3 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
-      "score": 28.788101575869526,
+      "reason": "Public analyst consensus: strong buy, 10 analysts; revenue growth 40.9% and 3-month benchmark-relative strength +0.6 pp. Latest annual free cash flow is positive and higher than the prior annual observation.",
+      "score": 28.637644758877816,
       "links": {
         "source": "https://finance.yahoo.com/quote/DLO/",
         "analysis_source": "https://finance.yahoo.com/quote/DLO/analysis/",
@@ -27,13 +27,13 @@
         "financials_source": "https://finance.yahoo.com/quote/DLO/financials/"
       },
       "indicators": {
-        "pe": 16.905405,
-        "forward_pe": 11.232526,
+        "pe": 17.006756,
+        "forward_pe": 11.299867,
         "peg": null,
         "eps": 0.74,
         "forward_eps": 1.11373,
-        "price_to_book": 6.236291,
-        "market_cap": 3583739136.0,
+        "price_to_book": 6.273679,
+        "market_cap": 3605224448.0,
         "profit_margin": 0.14949,
         "operating_margin": 0.17385,
         "roe": 0.4074,
@@ -42,7 +42,7 @@
         "earnings_growth": 0.353,
         "dividend_yield": 1.58,
         "beta": 0.873,
-        "price_to_sales": 2.4354956
+        "price_to_sales": 2.4500968
       },
       "analyst_count": 10
     }
